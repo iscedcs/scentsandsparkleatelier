@@ -59,7 +59,7 @@ export function SustainabilitySection() {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-muted/30">
+    <section ref={ref} className="py-20 bg-muted/50">
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -70,8 +70,8 @@ export function SustainabilitySection() {
             <h2 className="font-heading text-3xl md:text-4xl">Sustainability & Craftsmanship</h2>
             <div className="w-20 h-1 bg-primary mt-4 mb-6"></div>
             <p className="text-gray-700 mb-8">
-              At Scents & Sparkle Atelier, we believe that luxury and sustainability can go hand in hand. Our commitment
-              to craftsmanship and environmental responsibility is at the heart of everything we do.
+              {`At Scents & Sparkle Atelier, we believe that luxury and sustainability can go hand in hand. Our commitment
+              to craftsmanship and environmental responsibility is at the heart of everything we do.`}
             </p>
 
             <motion.div
@@ -100,7 +100,7 @@ export function SustainabilitySection() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/products/IMG_2337.JPG"
+                src="/products/photo_2025-04-13_22-16-04.jpg"
                 alt="Sustainable candle making"
                 fill
                 className="object-cover rounded-lg"
@@ -108,7 +108,7 @@ export function SustainabilitySection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-white font-heading text-xl">
-                  "We believe in creating products that are as kind to the planet as they are to your home."
+                  {`"We believe in creating products that are as kind to the planet as they are to your home."`}
                 </p>
               </div>
             </div>

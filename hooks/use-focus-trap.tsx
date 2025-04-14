@@ -47,5 +47,5 @@ export function useFocusTrap(active = true): React.RefObject<HTMLDivElement> {
     }
   }, [active])
 
-  return ref
+  return ref as React.RefObject<HTMLDivElement>
 }

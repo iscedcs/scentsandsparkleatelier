@@ -19,7 +19,8 @@ export function CollectionsHero() {
       <motion.div className="absolute inset-0" style={{ y, opacity, }}>
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="w-full h-full relative">
-          <Image src="/products/IMG_2337.JPG" alt="Our Collections" fill className="object-cover" priority />
+          <video src="/video/IMG_6170.mp4" loop muted playsInline autoPlay className="object-cover w-full"></video>
+          {/* <Image src="/products/IMG_2337.JPG" alt="Our Collections" fill className="object-cover" priority /> */}
         </div>
       </motion.div>
 
@@ -36,7 +37,7 @@ export function CollectionsHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            //Our Collections
+            {`//Our Collections`}
           </motion.p>
 
           <motion.h1
@@ -54,8 +55,8 @@ export function CollectionsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Explore our range of premium, handcrafted candles and home fragrances, designed to transform your space and
-            elevate your everyday moments.
+            {`Explore our range of premium, handcrafted candles and home fragrances, designed to transform your space and
+            elevate your everyday moments.`}
           </motion.p>
         </motion.div>
       </div>

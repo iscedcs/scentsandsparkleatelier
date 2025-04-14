@@ -35,7 +35,7 @@ export function FloatingContactBubbles() {
           <h2 className="font-heading text-3xl md:text-4xl">Connect Your Way</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Choose how you'd like to reach us. We're here to help in whatever way works best for you.
+            {`Choose how you'd like to reach us. We're here to help in whatever way works best for you.`}
           </p>
         </motion.div>
 

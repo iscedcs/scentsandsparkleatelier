@@ -60,7 +60,7 @@ export function InteractiveBrandValues() {
   }
 
   return (
-    <section ref={ref} className="py-24 bg-muted/30">
+    <section ref={ref} className="py-24 bg-muted/50">
       <MaxWidthWrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

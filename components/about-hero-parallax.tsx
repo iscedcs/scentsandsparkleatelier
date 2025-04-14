@@ -20,7 +20,7 @@ export function AboutHeroParallax() {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="w-full h-full relative">
           <Image
-            src="/products/IMG_2337.JPG"
+            src="/products/photo_2025-04-13_22-16-15.jpg"
             alt="About Scents & Sparkle Atelier"
             fill
             className="object-cover"
@@ -42,7 +42,7 @@ export function AboutHeroParallax() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            //Our Story
+            {`//Our Story`}
           </motion.p>
 
           <motion.h1
@@ -51,7 +51,7 @@ export function AboutHeroParallax() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Crafting Intentional Scents For Every Space
+            {`Crafting Intentional Scents For Every Space`}
           </motion.h1>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { debounce } from "@/lib/utils"
+import { useDebounce } from "./use-debounce"
 
 interface ScrollPosition {
   x: number
@@ -40,7 +40,7 @@ export function useScrollPosition(delay = 10): ScrollPosition {
       prevScrollY = currentScrollY
     }
 
-    const debouncedHandleScroll = debounce(handleScroll, delay)
+    const debouncedHandleScroll = useDebounce(handleScroll, delay)
 
     window.addEventListener("scroll", debouncedHandleScroll)
 

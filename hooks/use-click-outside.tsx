@@ -28,5 +28,5 @@ export function useClickOutside<T extends HTMLElement = HTMLElement>(handler: Ha
     }
   }, [ref, handler])
 
-  return ref
+  return ref as RefObject<T>
 }

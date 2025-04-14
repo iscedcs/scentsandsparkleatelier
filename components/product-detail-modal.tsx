@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { X, ShoppingCart, Heart, Share2 } from "lucide-react"
 import type { Product } from "@/components/product-grid"
+import Link from "next/link"
 
 interface ProductDetailModalProps {
   product: Product
@@ -71,34 +72,19 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
               </ul>
             </div>
 
-            <div className="mb-8">
-              <h4 className="font-medium mb-3">Quantity:</h4>
-              <div className="flex items-center border border-gray-300 rounded-md w-32">
-                <button className="px-3 py-2 text-gray-500 hover:text-gray-700">-</button>
-                <input type="text" value="1" readOnly className="w-full text-center border-0 focus:ring-0" />
-                <button className="px-3 py-2 text-gray-500 hover:text-gray-700">+</button>
-              </div>
-            </div>
+            
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-              <Button className="col-span-2 bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2">
+              <Button asChild className="col-span-2 bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2">
+              <Link href="/">
                 <ShoppingCart className="h-4 w-4" />
-                Add to Cart
+                 Order Now
+                </Link>
               </Button>
-              <Button variant="outline" className="border-gray-300">
-                <Heart className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" className="border-gray-300">
-                <Share2 className="h-4 w-4" />
-              </Button>
+              
             </div>
 
-            <div className="mt-auto pt-6 border-t border-gray-200">
-              <div className="flex items-center justify-between text-sm text-gray-500">
-                <span>SKU: {product.id}</span>
-                <span>Free shipping on orders over ₦20,000</span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </motion.div>

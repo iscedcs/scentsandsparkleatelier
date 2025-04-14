@@ -36,21 +36,21 @@ export function ScentInspiredContact() {
     {
       name: "Energizing",
       description: "Inquiries about our uplifting fragrances",
-      image: "/images/candle-4.jpeg",
+      image: "/products/photo_2025-04-13_22-16-01.jpg",
       color: "bg-yellow-50 border-yellow-200",
       formLabel: "What energizing scent experience are you looking for?",
     },
     {
       name: "Romantic",
       description: "Questions about our intimate scents",
-      image: "/images/candle-1.jpeg",
+      image: "/products/photo_2025-04-13_22-15-58.jpg",
       color: "bg-rose-50 border-rose-200",
       formLabel: "How can we help create your perfect romantic atmosphere?",
     },
     {
       name: "Business",
       description: "Wholesale and partnership inquiries",
-      image: "/images/candle-5.jpeg",
+      image: "/products/photo_2025-04-13_22-16-33.jpg",
       color: "bg-green-50 border-green-200",
       formLabel: "Tell us about your business inquiry",
     },
@@ -67,7 +67,7 @@ export function ScentInspiredContact() {
   }
 
   return (
-    <section ref={ref} className="py-24 bg-muted/30">
+    <section ref={ref} className="py-24 bg-muted/50">
       <MaxWidthWrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,7 +78,7 @@ export function ScentInspiredContact() {
           <h2 className="font-heading text-3xl md:text-4xl">What Brings You Here Today?</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Select the option that best matches your inquiry, and we'll tailor our response to your needs.
+            {`Select the option that best matches your inquiry, and we'll tailor our response to your needs.`}
           </p>
         </motion.div>
 
@@ -193,8 +193,8 @@ export function ScentInspiredContact() {
                 <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                 <h3 className="font-heading text-2xl mb-2">Thank You!</h3>
                 <p className="text-gray-700 mb-6">
-                  Your {selectedMood?.name.toLowerCase()} inquiry has been sent successfully. We'll get back to you as
-                  soon as possible.
+                  {`Your ${selectedMood?.name.toLowerCase()} inquiry has been sent successfully. We'll get back to you as
+                  soon as possible.`}
                 </p>
                 <Button onClick={resetForm} variant="outline" className="border-primary text-primary">
                   Send Another Inquiry

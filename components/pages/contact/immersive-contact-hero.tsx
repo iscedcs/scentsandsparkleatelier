@@ -89,7 +89,7 @@ export function ImmersiveContactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Let's Connect
+            {`Let's Connect`}
           </motion.h1>
 
           <motion.p
@@ -98,7 +98,7 @@ export function ImmersiveContactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            We're here to answer your questions, hear your feedback, and help you find the perfect scent for your space.
+            {`We're here to answer your questions, hear your feedback, and help you find the perfect scent for your space.`}
           </motion.p>
 
           <motion.div

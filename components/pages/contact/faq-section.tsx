@@ -53,7 +53,7 @@ export function FAQSection() {
   }
 
   return (
-    <section ref={ref} className="py-24 bg-muted/30">
+    <section ref={ref} className="py-24 bg-muted/50">
       <MaxWidthWrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,8 +64,8 @@ export function FAQSection() {
           <h2 className="font-heading text-3xl md:text-4xl">Frequently Asked Questions</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Find answers to our most commonly asked questions. If you can't find what you're looking for, please contact
-            us directly.
+            {`Find answers to our most commonly asked questions. If you can't find what you're looking for, please contact
+            us directly.`}
           </p>
         </motion.div>
 

@@ -1,11 +1,88 @@
 "use client"
-
-import { useRef, useState, useMemo } from "react"
+import { useRef, useState } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import type { Product } from "@/components/product-grid"
 import { Button } from "@/components/ui/button"
 import { Plus, X } from "lucide-react"
+
+function useProductTransform(scrollYProgress: any, index: number, totalProducts: number) {
+  const startProgress = index * (1 / totalProducts)
+  const endProgress = startProgress + 0.5
+
+  const opacity = useTransform(scrollYProgress, [startProgress, Math.min(startProgress + 0.1, 1)], [0, 1])
+  const xOffset = useTransform(scrollYProgress, [startProgress, endProgress], [0, ((index % 3) - 1) * 120])
+  const yOffset = useTransform(scrollYProgress, [startProgress, endProgress], [0, Math.floor(index / 3) * 120])
+  const scale = useTransform(scrollYProgress, [startProgress, endProgress], [0.8, 1])
+  const rotate = useTransform(scrollYProgress, [startProgress, endProgress], [index % 2 === 0 ? -5 : 5, 0])
+  const zIndex = useTransform(scrollYProgress, [0, 1], [totalProducts - index, 1])
+
+  return { opacity, xOffset, yOffset, scale, rotate, zIndex }
+}
+
+interface ProductCardProps {
+  product: Product
+  index: number
+  totalProducts: number
+  scrollYProgress: any 
+  onClick: () => void
+}
+
+function ProductCard({ product, index, totalProducts, scrollYProgress, onClick }: ProductCardProps) {
+  const transforms = useProductTransform(scrollYProgress, index, totalProducts)
+
+  return (
+    <motion.div
+      key={product.id}
+      className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer"
+      style={{
+        opacity: transforms.opacity,
+        scale: transforms.scale,
+        zIndex: transforms.zIndex,
+        x: transforms.xOffset,
+        y: transforms.yOffset,
+        rotate: transforms.rotate,
+        position: "absolute",
+        width: "calc(100% - 2rem)",
+        left: "50%",
+        top: "50%",
+        translateX: "-50%",
+        translateY: "-50%",
+      }}
+      whileHover={{
+        scale: 1.05,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      }}
+      onClick={onClick}
+    >
+      <div className="relative aspect-[3/4] overflow-hidden">
+        <Image
+          src={product.image || "/products/IMG_2337.JPG"}
+          alt={product.name}
+          fill
+          className="object-cover transition-transform duration-500 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileHover={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-full p-2"
+          >
+            <Plus className="h-6 w-6 text-primary" />
+          </motion.div>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="font-heading text-xl mb-2">{product.name}</h3>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-primary font-medium">{product.price}</span>
+          <span className="text-xs text-gray-500 uppercase tracking-wider">{product.category}</span>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 interface StackingProductGridEnhancedProps {
   products: Product[]
@@ -30,47 +107,6 @@ export function StackingProductGridEnhanced({ products, title, subtitle }: Stack
     setSelectedProduct(null)
   }
 
-  // Calculate transforms outside the map function
-  const productTransforms = useMemo(() => {
-    return products.map((product, index) => {
-      // Calculate the progress range for this item
-      const startProgress = index * (1 / products.length)
-      const endProgress = startProgress + 0.5 // Overlap the animations for smoother effect
-
-      // Create transforms based on scroll progress
-      const opacity = useTransform(scrollYProgress, [startProgress, Math.min(startProgress + 0.1, 1)], [0, 1])
-
-      // Calculate position transforms
-      // Items start stacked in the center and move to their grid positions
-      const xOffset = useTransform(
-        scrollYProgress,
-        [startProgress, endProgress],
-        [0, ((index % 3) - 1) * 120], // For 3 columns
-      )
-
-      const yOffset = useTransform(
-        scrollYProgress,
-        [startProgress, endProgress],
-        [0, Math.floor(index / 3) * 120], // Row position
-      )
-
-      const scale = useTransform(scrollYProgress, [startProgress, endProgress], [0.8, 1])
-
-      const rotate = useTransform(scrollYProgress, [startProgress, endProgress], [index % 2 === 0 ? -5 : 5, 0])
-
-      const zIndex = useTransform(scrollYProgress, [0, 1], [products.length - index, 1])
-
-      return {
-        opacity,
-        xOffset,
-        yOffset,
-        scale,
-        rotate,
-        zIndex,
-      }
-    })
-  }, [products, scrollYProgress])
-
   return (
     <section className="py-24 bg-white" ref={containerRef}>
       <div className="container">
@@ -83,72 +119,25 @@ export function StackingProductGridEnhanced({ products, title, subtitle }: Stack
         )}
 
         <div className="relative h-[200vh]">
-          {/* Fixed container that stays in view while scrolling through this section */}
           <div className="sticky top-20 h-screen flex items-center justify-center overflow-hidden">
             <div className="relative w-full max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-                {products.map((product, index) => {
-                  const transforms = productTransforms[index]
-
-                  return (
-                    <motion.div
-                      key={product.id}
-                      className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer"
-                      style={{
-                        opacity: transforms.opacity,
-                        scale: transforms.scale,
-                        zIndex: transforms.zIndex,
-                        x: transforms.xOffset,
-                        y: transforms.yOffset,
-                        rotate: transforms.rotate,
-                        position: "absolute",
-                        width: "calc(100% - 2rem)",
-                        left: "50%",
-                        top: "50%",
-                        translateX: "-50%",
-                        translateY: "-50%",
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                      }}
-                      onClick={() => handleProductClick(product)}
-                    >
-                      <div className="relative aspect-[3/4] overflow-hidden">
-                        <Image
-                          src={product.image || "/products/IMG_2337.JPG"}
-                          alt={product.name}
-                          fill
-                          className="object-cover transition-transform duration-500 hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                          <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileHover={{ opacity: 1, scale: 1 }}
-                            className="bg-white rounded-full p-2"
-                          >
-                            <Plus className="h-6 w-6 text-primary" />
-                          </motion.div>
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <h3 className="font-heading text-xl mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
-                        <div className="flex justify-between items-center">
-                          <span className="text-primary font-medium">{product.price}</span>
-                          <span className="text-xs text-gray-500 uppercase tracking-wider">{product.category}</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )
-                })}
+                {products.map((product, index) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    index={index}
+                    totalProducts={products.length}
+                    scrollYProgress={scrollYProgress}
+                    onClick={() => handleProductClick(product)}
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Product Detail Modal */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div

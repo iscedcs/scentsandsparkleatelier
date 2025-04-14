@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import MaxWidthWrapper from "./shared/max-widthwrapper"
+import Link from "next/link"
 
 export function ScentExperienceSection() {
   const ref = useRef(null)
@@ -12,7 +13,7 @@ export function ScentExperienceSection() {
 
   const scentExperiences = [
     {
-      name: "Love Spell",
+      name: "Sweet Lychee",
       description: "A warm, inviting blend of vanilla and amber that creates a sense of comfort and intimacy.",
       mood: "Romantic & Cozy",
       notes: ["Vanilla", "Amber", "Sandalwood"],
@@ -20,7 +21,7 @@ export function ScentExperienceSection() {
       color: "bg-rose-50",
     },
     {
-      name: "Sweet Lychee",
+      name: "Fruití ",
       description: "A bright, fruity fragrance that brings a refreshing energy to any space.",
       mood: "Uplifting & Energizing",
       notes: ["Lychee", "Rose", "Fresh Air"],
@@ -28,7 +29,7 @@ export function ScentExperienceSection() {
       color: "bg-pink-50",
     },
     {
-      name: "Fruití",
+      name: "Love Spell",
       description: "A vibrant medley of citrus and tropical fruits that awakens the senses and brightens your space.",
       mood: "Refreshing & Vibrant",
       notes: ["Orange", "Pineapple", "Mango"],
@@ -116,7 +117,9 @@ export function ScentExperienceSection() {
                   variant="outline"
                   className="w-full border-primary text-primary hover:bg-primary hover:text-white"
                 >
+                  <Link href='/collections'>
                   Explore Scent
+                  </Link>
                 </Button>
               </div>
             </motion.div>

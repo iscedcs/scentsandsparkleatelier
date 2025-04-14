@@ -32,19 +32,19 @@ export function ScentMoodSelector({ products, onProductClick }: ScentMoodSelecto
     {
       name: "Energizing",
       description: "Boost your mood and energy with these uplifting fragrances",
-      image: "/images/candle-4.jpeg",
+      image: "/products/photo_2025-04-13_22-16-01.jpg",
       color: "bg-yellow-50",
     },
     {
       name: "Romantic",
       description: "Set the mood for intimate moments with these warm scents",
-      image: "/images/candle-1.jpeg",
+      image: "/products/photo_2025-04-13_22-15-58.jpg",
       color: "bg-rose-50",
     },
     {
       name: "Fresh",
       description: "Bring the outdoors in with these clean, refreshing fragrances",
-      image: "/images/candle-5.jpeg",
+      image: "/products/photo_2025-04-13_22-16-33.jpg",
       color: "bg-green-50",
     },
   ]
@@ -71,7 +71,7 @@ export function ScentMoodSelector({ products, onProductClick }: ScentMoodSelecto
   }
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-muted/50">
       <MaxWidthWrapper>
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl md:text-4xl">Shop By Mood</h2>
