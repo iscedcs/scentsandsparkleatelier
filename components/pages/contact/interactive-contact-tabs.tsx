@@ -39,14 +39,14 @@ export function InteractiveContactTabs() {
           <h2 className="font-heading text-3xl md:text-4xl">Get In Touch</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            We'd love to hear from you. Choose how you'd like to connect with us.
+            {`We'd love to hear from you. Choose how you'd like to connect with us.`}
           </p>
         </motion.div>
 
         {/* Interactive Tabs */}
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-12">
-            <div className="inline-flex bg-muted/30 p-1 rounded-full">
+            <div className="inline-flex bg-muted/50 p-1 rounded-full">
               <TabButton
                 active={activeTab === "message"}
                 onClick={() => setActiveTab("message")}
@@ -151,7 +151,7 @@ export function InteractiveContactTabs() {
                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                     <h3 className="font-heading text-2xl mb-2">Thank You!</h3>
                     <p className="text-gray-700 mb-6">
-                      Your message has been sent successfully. We'll get back to you as soon as possible.
+                     {` Your message has been sent successfully. We'll get back to you as soon as possible.`}
                     </p>
                     <Button onClick={resetForm} variant="outline" className="border-primary text-primary">
                       Send Another Message
@@ -215,7 +215,7 @@ export function InteractiveContactTabs() {
                           <br />
                           Lekki Phase 1
                           <br />
-                          Lagos, Nigeria
+                          {`Lagos, Nigeria`}
                         </p>
                       </div>
                     </div>
@@ -247,7 +247,7 @@ export function InteractiveContactTabs() {
                     <div className="md:col-span-1">
                       <h3 className="font-heading text-xl mb-4">Our Location</h3>
                       <p className="text-gray-700 mb-4">
-                        Visit our studio to experience our scents in person and meet our team.
+                        {`Visit our studio to experience our scents in person and meet our team.`}
                       </p>
                       <div className="mb-6">
                         <p className="font-medium">Address:</p>
@@ -256,7 +256,7 @@ export function InteractiveContactTabs() {
                           <br />
                           Lekki Phase 1
                           <br />
-                          Lagos, Nigeria
+                          {`Lagos, Nigeria`}
                         </p>
                       </div>
                       <div>

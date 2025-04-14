@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { debounce } from "@/lib/utils"
+import { useDebounce } from "./use-debounce"
 
 interface WindowSize {
   width: number
@@ -24,7 +24,7 @@ export function useWindowSize(delay = 100): WindowSize {
     }
 
     // Debounce the resize handler
-    const debouncedHandleResize = debounce(handleResize, delay)
+    const debouncedHandleResize = useDebounce(handleResize, delay)
 
     // Add event listener
     window.addEventListener("resize", debouncedHandleResize)

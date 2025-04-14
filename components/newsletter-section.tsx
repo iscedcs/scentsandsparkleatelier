@@ -10,7 +10,7 @@ export function NewsletterSection() {
   const isInView = useInView(ref, { once: false, amount: 0.2 })
 
   return (
-    <section ref={ref} className="py-20 bg-muted/30">
+    <section ref={ref} className="py-20 bg-muted/50">
         <MaxWidthWrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

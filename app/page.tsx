@@ -12,26 +12,23 @@ import { VideoBackgroundSection } from "@/components/video-background-section"
 const products = [
   {
     id: "1",
-    name: "Love Spell",
+    name: "Sweet Lychee",
     description: "A warm, inviting blend of vanilla and amber that creates a sense of comfort and intimacy.",
     image: "/products/IMG_2245.JPG",
-    price: "₦8,500",
     category: "Signature",
   },
   {
     id: "2",
-    name: "Sweet Lychee",
+    name: "Fruití",
     description: "A bright, fruity fragrance that brings a refreshing energy to any space.",
     image: "/products/IMG_2256.JPG",
-    price: "₦8,500",
     category: "Signature",
   },
   {
     id: "3",
-    name: "Fruití",
+    name: "Love Spell",
     description: "A vibrant medley of citrus and tropical fruits that awakens the senses and brightens your space.",
     image: "/products/IMG_2334.JPG",
-    price: "₦9,000",
     category: "Signature",
   },
   {
@@ -39,7 +36,6 @@ const products = [
     name: "Lavender Dreams",
     description: "A calming blend of lavender and chamomile, perfect for creating a relaxing atmosphere.",
     image: "/products/IMG_2336.JPG",
-    price: "₦8,500",
     category: "Relaxing",
   },
   {
@@ -47,7 +43,6 @@ const products = [
     name: "Vanilla Dream",
     description: "A comforting scent of warm vanilla and creamy tonka bean that creates a cozy atmosphere.",
     image: "/products/IMG_2337.JPG",
-    price: "₦8,500",
     category: "Classic",
   },
 ]

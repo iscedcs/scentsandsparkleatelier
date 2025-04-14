@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { Product } from "@/components/product-grid"
 import MaxWidthWrapper from "./shared/max-widthwrapper"
+import Link from "next/link"
 
 interface ImmersiveProductShowcaseProps {
   products: Product[]
@@ -30,7 +31,7 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
     return () => {
       if (interval) clearInterval(interval)
     }
-  }, [autoplay, currentIndex])
+  }, [autoplay, currentIndex,])
 
   // Pause autoplay on hover
   const handleMouseEnter = () => setAutoplay(false)
@@ -67,13 +68,13 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
   }
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/50">
         <MaxWidthWrapper>
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl">Featured Collection</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Explore our most popular scents, crafted with premium ingredients and designed to transform your space.
+            {`Explore our most popular scents, crafted with premium ingredients and designed to transform your space.`}
           </p>
         </div>
 
@@ -135,7 +136,11 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
                 </div>
 
                 <div className="mt-auto">
-                  <Button className="bg-primary hover:bg-primary/90 text-white">Add to Cart</Button>
+                  <Button asChild className="bg-primary hover:bg-primary/90 text-white">
+                  <Link href=''>
+                  Order Now
+                  </Link>
+                  </Button>
                 </div>
               </div>
             </motion.div>

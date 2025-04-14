@@ -61,7 +61,7 @@ export function ScentStoryTimeline() {
   ]
 
   return (
-    <section ref={containerRef} className="py-24 bg-muted/30 relative">
+    <section ref={containerRef} className="py-24 bg-muted/50 relative">
       <MaxWidthWrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

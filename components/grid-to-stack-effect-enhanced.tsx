@@ -13,56 +13,138 @@ interface GridToStackEffectEnhancedProps {
   subtitle?: string
 }
 
+interface ProductCardProps {
+  product: Product
+  transform: {
+    startProgress: number
+    endProgress: number
+    xStart: number
+    xEnd: number
+    yStart: number
+    yEnd: number
+    scaleStart: number
+    scaleEnd: number
+    rotateXStart: number
+    rotateXEnd: number
+    rotateYStart: number
+    rotateYEnd: number
+    zIndexStart: number
+    zIndexEnd: number
+    opacityStart: number
+    opacityEnd: number
+    index: number
+  }
+  scrollYProgress: any // You can refine this type with MotionValue<number>
+  onClick: () => void
+}
+
+function ProductCard({ product, transform, scrollYProgress, onClick }: ProductCardProps) {
+  const x = useTransform(
+    scrollYProgress,
+    [transform.startProgress, transform.endProgress],
+    [transform.xStart, transform.xEnd],
+  )
+  const y = useTransform(
+    scrollYProgress,
+    [transform.startProgress, transform.endProgress],
+    [transform.yStart, transform.yEnd],
+  )
+  const scale = useTransform(
+    scrollYProgress,
+    [transform.startProgress, transform.endProgress],
+    [transform.scaleStart, transform.scaleEnd],
+  )
+  const rotateX = useTransform(
+    scrollYProgress,
+    [transform.startProgress, transform.endProgress],
+    [transform.rotateXStart, transform.rotateXEnd],
+  )
+  const rotateY = useTransform(
+    scrollYProgress,
+    [transform.startProgress, transform.endProgress],
+    [transform.rotateYStart, transform.rotateYEnd],
+  )
+  const zIndex = useTransform(
+    scrollYProgress,
+    [transform.startProgress, transform.endProgress],
+    [transform.zIndexStart, transform.zIndexEnd],
+  )
+  const opacity = useTransform(
+    scrollYProgress,
+    [Math.max(0, transform.startProgress - 0.1), transform.startProgress],
+    [transform.opacityStart, transform.opacityEnd],
+  )
+  const isStacked = useTransform(scrollYProgress, (value: number) => value >= transform.endProgress)
+
+  return (
+    <motion.div
+      className="absolute bg-white rounded-lg overflow-hidden shadow-lg w-[300px] cursor-pointer"
+      style={{
+        x,
+        y,
+        scale,
+        rotateX,
+        rotateY,
+        zIndex,
+        opacity,
+        transformStyle: "preserve-3d",
+      }}
+      whileHover={{
+        scale: isStacked.get() ? 1.05 : 1.02,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      }}
+      onClick={onClick}
+    >
+      <div className="relative aspect-[3/4] overflow-hidden">
+        <Image
+          src={product.image || "/products/IMG_2337.JPG"}
+          alt={product.name}
+          fill
+          className="object-cover transition-transform duration-500 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300"></div>
+      </div>
+      <div className="p-4">
+        <h3 className="font-heading text-lg mb-1">{product.name}</h3>
+        <div className="flex justify-between items-center">
+          <p className="text-primary font-medium">{product.price}</p>
+          <span className="text-xs text-gray-500 uppercase tracking-wider">{product.category}</span>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export function GridToStackEffectEnhanced({ products, title, subtitle }: GridToStackEffectEnhancedProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
-  // This controls the entire animation sequence
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   })
 
-  // Calculate the transforms for each product
   const productTransforms = useMemo(() => {
     const totalRows = Math.ceil(products.length / 3)
 
     return products.map((product, index) => {
-      // Calculate row and column for grid positioning
-      const row = Math.floor(index / 3) // Assuming 3 columns
+      const row = Math.floor(index / 3)
       const col = index % 3
-
-      // Calculate the progress range for this item
-      // Items stack from bottom to top, so we reverse the order
       const rowFromBottom = totalRows - 1 - row
-
-      // Each row starts stacking at a different scroll point
-      const startProgress = rowFromBottom * 0.15 // Adjust this value to control stacking speed
-      const endProgress = startProgress + 0.15 // Duration of each item's animation
-
-      // For x position: start at grid position, end at center
-      const xStart = (col - 1) * 110 // Grid position (centered, with -1, 0, 1 for 3 columns)
-      const xEnd = 0 // Center position
-
-      // For y position: start at grid position, end at center with slight offset based on stack order
-      const yStart = row * 110 // Grid position
-      const yEnd = -5 * index // Slight offset for stacking effect
-
-      // Scale: grow slightly as it stacks
+      const startProgress = rowFromBottom * 0.15
+      const endProgress = startProgress + 0.15
+      const xStart = (col - 1) * 110
+      const xEnd = 0
+      const yStart = row * 110
+      const yEnd = -5 * index
       const scaleStart = 1
       const scaleEnd = 1 + index * 0.01
-
-      // Rotation: add slight rotation for 3D effect
       const rotateXStart = 0
       const rotateXEnd = -2
       const rotateYStart = 0
       const rotateYEnd = col === 0 ? 2 : col === 2 ? -2 : 0
-
-      // Z-index: stacked items should appear on top
       const zIndexStart = 1
       const zIndexEnd = products.length - index
-
-      // Opacity: fade in items that are not yet in view
       const opacityStart = 0
       const opacityEnd = 1
 
@@ -86,59 +168,7 @@ export function GridToStackEffectEnhanced({ products, title, subtitle }: GridToS
         index,
       }
     })
-  }, [products.length])
-
-  const animatedProductStyles = useMemo(() => {
-    return productTransforms.map((transform) => {
-      const x = useTransform(
-        scrollYProgress,
-        [transform.startProgress, transform.endProgress],
-        [transform.xStart, transform.xEnd],
-      )
-      const y = useTransform(
-        scrollYProgress,
-        [transform.startProgress, transform.endProgress],
-        [transform.yStart, transform.yEnd],
-      )
-      const scale = useTransform(
-        scrollYProgress,
-        [transform.startProgress, transform.endProgress],
-        [transform.scaleStart, transform.scaleEnd],
-      )
-      const rotateX = useTransform(
-        scrollYProgress,
-        [transform.startProgress, transform.endProgress],
-        [transform.rotateXStart, transform.rotateXEnd],
-      )
-      const rotateY = useTransform(
-        scrollYProgress,
-        [transform.startProgress, transform.endProgress],
-        [transform.rotateYStart, transform.rotateYEnd],
-      )
-      const zIndex = useTransform(
-        scrollYProgress,
-        [transform.startProgress, transform.endProgress],
-        [transform.zIndexStart, transform.zIndexEnd],
-      )
-      const opacity = useTransform(
-        scrollYProgress,
-        [Math.max(0, transform.startProgress - 0.1), transform.startProgress],
-        [transform.opacityStart, transform.opacityEnd],
-      )
-      const isStacked = useTransform(scrollYProgress, (value) => value >= transform.endProgress)
-
-      return {
-        x,
-        y,
-        scale,
-        rotateX,
-        rotateY,
-        zIndex,
-        opacity,
-        isStacked,
-      }
-    })
-  }, [scrollYProgress, productTransforms])
+  }, [products])
 
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product)
@@ -150,7 +180,6 @@ export function GridToStackEffectEnhanced({ products, title, subtitle }: GridToS
 
   return (
     <section className="relative h-[200vh]" ref={containerRef}>
-      {/* Title section */}
       <div className="sticky top-0 pt-32 pb-8 bg-white z-10">
         <div className="container">
           {title && (
@@ -163,57 +192,22 @@ export function GridToStackEffectEnhanced({ products, title, subtitle }: GridToS
         </div>
       </div>
 
-      {/* Products grid that transforms to stack */}
       <div className="sticky top-0 h-screen pt-32">
         <div className="container">
           <div className="relative h-[70vh] flex items-center justify-center perspective">
-            {products.map((product, index) => {
-              const transforms = animatedProductStyles[index]
-
-              return (
-                <motion.div
-                  key={product.id}
-                  className="absolute bg-white rounded-lg overflow-hidden shadow-lg w-[300px] cursor-pointer"
-                  style={{
-                    x: transforms.x,
-                    y: transforms.y,
-                    scale: transforms.scale,
-                    rotateX: transforms.rotateX,
-                    rotateY: transforms.rotateY,
-                    zIndex: transforms.zIndex,
-                    opacity: transforms.opacity,
-                    transformStyle: "preserve-3d",
-                  }}
-                  whileHover={{
-                    scale: transforms.isStacked.get() ? 1.05 : 1.02,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                  }}
-                  onClick={() => handleProductClick(product)}
-                >
-                  <div className="relative aspect-[3/4] overflow-hidden">
-                    <Image
-                      src={product.image || "/products/IMG_2337.JPG"}
-                      alt={product.name}
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300"></div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-heading text-lg mb-1">{product.name}</h3>
-                    <div className="flex justify-between items-center">
-                      <p className="text-primary font-medium">{product.price}</p>
-                      <span className="text-xs text-gray-500 uppercase tracking-wider">{product.category}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              )
-            })}
+            {products.map((product, index) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                transform={productTransforms[index]}
+                scrollYProgress={scrollYProgress}
+                onClick={() => handleProductClick(product)}
+              />
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Product Detail Modal */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
@@ -297,7 +291,6 @@ export function GridToStackEffectEnhanced({ products, title, subtitle }: GridToS
         )}
       </AnimatePresence>
 
-      {/* Add a CSS class for perspective */}
       <style jsx global>{`
         .perspective {
           perspective: 1000px;

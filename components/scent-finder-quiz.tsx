@@ -139,8 +139,8 @@ export function ScentFinderQuiz({ products }: ScentFinderQuizProps) {
             <h2 className="font-heading text-3xl md:text-4xl">Find Your Perfect Scent</h2>
             <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
             <p className="text-gray-700 max-w-2xl mx-auto">
-              Not sure which scent is right for you? Take our quick quiz to discover the perfect fragrance for your
-              space and mood.
+              {`Not sure which scent is right for you? Take our quick quiz to discover the perfect fragrance for your
+              space and mood.`}
             </p>
           </div>
 

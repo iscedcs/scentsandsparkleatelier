@@ -16,25 +16,21 @@ export function FeaturedProducts() {
       name: "Love Spell",
       description: "100% Natural Soy Candle, hand poured with love",
       image: "/products/IMG_2245.JPG",
-      price: "₦8,500",
     },
     {
       name: "Sweet Lychee",
       description: "100% Natural Soy Candle, hand poured with love",
       image: "/products/IMG_2256.JPG",
-      price: "₦8,500",
     },
     {
       name: "Fruití",
       description: "100% Natural Soy Candle with dried fruit pieces",
       image: "/products/IMG_2334.JPG",
-      price: "₦9,000",
     },
     {
       name: "Love Spell",
       description: "100% Natural Soy Candle, hand poured with love",
       image: "/products/IMG_2336.JPG",
-      price: "₦8,500",
     },
   ]
 
@@ -72,7 +68,7 @@ export function FeaturedProducts() {
           <h2 className="font-heading text-3xl md:text-4xl">Our Signature Collection</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Discover our most loved scents, carefully crafted to transform your space and elevate your everyday moments.
+            {`Discover our most loved scents, carefully crafted to transform your space and elevate your everyday moments.`}
           </p>
         </motion.div>
 
@@ -107,7 +103,6 @@ export function FeaturedProducts() {
               <div className="flex flex-col flex-grow">
                 <h3 className="font-heading text-lg font-medium">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-2">{product.description}</p>
-                <p className="text-primary font-medium mt-auto">{product.price}</p>
               </div>
             </motion.div>
           ))}

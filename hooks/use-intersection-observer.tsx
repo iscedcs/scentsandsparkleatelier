@@ -40,5 +40,5 @@ export function useIntersectionObserver<T extends Element>(
     }
   }, [root, rootMargin, threshold, once])
 
-  return [ref, isIntersecting]
+  return [ref as RefObject<T>, isIntersecting]
 }

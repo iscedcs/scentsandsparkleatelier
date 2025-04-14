@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react"
 import type { Product } from "@/components/product-grid"
 import MaxWidthWrapper from "./shared/max-widthwrapper"
+import Link from "next/link"
 
 interface HorizontalProductShowcaseProps {
   products: Product[]
@@ -88,7 +89,7 @@ export function HorizontalProductShowcase({ products, onProductClick }: Horizont
           <h2 className="font-heading text-3xl md:text-4xl">Explore Our Collection</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Scroll horizontally to discover our premium handcrafted candles and home fragrances
+            {`Scroll horizontally to discover our premium handcrafted candles and home fragrances`}
           </p>
         </div>
 
@@ -126,14 +127,14 @@ export function HorizontalProductShowcase({ products, onProductClick }: Horizont
             {products.map((product, index) => (
               <motion.div
                 key={product.id}
-                className={`flex-shrink-0 w-[40vw] md:w-[30vw] lg:w-[25vw] snap-center px-4 transition-all duration-300 ${
+                className={`flex-shrink-0 w-[80vw] md:w-[30vw] lg:w-[25vw] snap-center px-4 transition-all duration-300 ${
                   activeIndex === index ? "scale-105" : "scale-95 opacity-70"
                 }`}
                 onClick={() => onProductClick && onProductClick(product)}
                 whileHover={{ scale: activeIndex === index ? 1.08 : 1 }}
               >
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer">
-                  <div className="relative aspect-[3/4] overflow-hidden">
+                  <div className="relative md:aspect-[3/4] aspect-[4/4] overflow-hidden">
                     <Image
                       src={product.image || "/products/IMG_2337.JPG"}
                       alt={product.name}
@@ -154,13 +155,15 @@ export function HorizontalProductShowcase({ products, onProductClick }: Horizont
                     <h3 className="font-heading text-xl mb-2">{product.name}</h3>
                     <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
                     <div className="mt-auto flex justify-between items-center">
-                      <span className="text-primary font-medium">{product.price}</span>
                       <Button
                         variant="outline"
                         size="sm"
+                        asChild
                         className="border-primary text-primary hover:bg-primary hover:text-white"
                       >
+                        <Link href='/collections'>
                         View
+                        </Link>
                       </Button>
                     </div>
                   </div>

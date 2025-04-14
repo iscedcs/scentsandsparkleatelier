@@ -31,7 +31,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-muted/30">
+    <section ref={ref} className="py-20 bg-muted/50">
       <MaxWidthWrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -51,16 +51,28 @@ export function TestimonialsSection() {
         >
           {[
             {
-              text: "The scents from Scents & Sparkle Atelier have transformed my home. Every candle tells a story and creates the perfect ambiance.",
-              author: "Sarah J.",
+              text: "“I lit this during a dinner date and the compliments wouldn’t stop.”",
+              author: "Zee, Lagos",
             },
             {
-              text: "I've tried many candles, but these are truly special. The fragrances are sophisticated and long-lasting. My new favorite!",
-              author: "Michael T.",
+              text: "“I love the packaging, but the scent? Even better.”",
+              author: "Ada, Portharcourt",
             },
             {
-              text: "Not only are these candles beautiful, but they're also eco-friendly. I love supporting a brand that cares about quality and sustainability.",
-              author: "Amara O.",
+              text: "“I’ve tried other candles but nothing lasts like this. The scent lingers for hours it’s insane.”",
+              author: "Chinaza, Enugu",
+            },
+            {
+              text: "“Someone walked into my living room and asked what perfume I sprayed. It was the diffuser.”",
+              author: "Tolu, Abuja",
+            },
+            {
+              text: "“It gave ‘rich auntie energy’ instantly. So soft, so luxe.”",
+              author: "Olamide, Lagos",
+            },
+            {
+              text: "“It’s the balance for me! Warm, clean, and not overwhelming. Just perfect.”",
+              author: "Zainab, Lagos",
             },
           ].map((testimonial, index) => (
             <motion.div key={index} variants={itemVariants} className="bg-white p-8 rounded-lg border">

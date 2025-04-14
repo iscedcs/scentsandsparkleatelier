@@ -22,5 +22,5 @@ export function useHover<T extends HTMLElement = HTMLElement>(): [RefObject<T>, 
     }
   }, [])
 
-  return [ref, isHovered]
+  return [ref as RefObject<T>, isHovered]
 }

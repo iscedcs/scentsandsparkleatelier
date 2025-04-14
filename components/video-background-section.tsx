@@ -41,14 +41,14 @@ export function VideoBackgroundSection() {
           muted
           playsInline
           autoPlay
-          poster="/video/IMG_6170.mp4?height=1080&width=1920"
+          poster="/video/IMG_6181.mp4?height=1080&width=1920"
         >
           <source
-            src="/video/IMG_6170.mp4"
+            src="/video/IMG_6181.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </video>    
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
