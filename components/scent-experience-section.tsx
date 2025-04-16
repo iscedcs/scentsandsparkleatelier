@@ -17,7 +17,7 @@ export function ScentExperienceSection() {
       description: "A warm, inviting blend of vanilla and amber that creates a sense of comfort and intimacy.",
       mood: "Romantic & Cozy",
       notes: ["Vanilla", "Amber", "Sandalwood"],
-      image: "/products/IMG_2245.JPG",
+      image: "/products/sweet.jpeg",
       color: "bg-rose-50",
     },
     {

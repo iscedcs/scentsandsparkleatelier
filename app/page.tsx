@@ -14,7 +14,7 @@ const products = [
     id: "1",
     name: "Sweet Lychee",
     description: "A warm, inviting blend of vanilla and amber that creates a sense of comfort and intimacy.",
-    image: "/products/IMG_2245.JPG",
+    image: "/products/sweet.jpeg",
     category: "Signature",
   },
   {

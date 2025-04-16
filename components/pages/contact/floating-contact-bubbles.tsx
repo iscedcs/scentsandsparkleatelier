@@ -168,15 +168,15 @@ export function FloatingContactBubbles() {
                   <div className="space-y-6">
                     <div>
                       <p className="font-medium mb-2">Customer Service:</p>
-                      <a href="tel:+2348012345678" className="text-primary hover:underline text-lg">
-                        +234 801 234 5678
+                      <a href="tel:+2348060550787" className="text-primary hover:underline text-lg">
+                      +2348060550787
                       </a>
                       <p className="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
                     </div>
                     <div>
                       <p className="font-medium mb-2">Wholesale Department:</p>
-                      <a href="tel:+2348023456789" className="text-primary hover:underline text-lg">
-                        +234 802 345 6789
+                      <a href="tel:+23408060550787" className="text-primary hover:underline text-lg">
+                      +2348060550787
                       </a>
                       <p className="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 5:00 PM</p>
                     </div>
@@ -191,11 +191,11 @@ export function FloatingContactBubbles() {
                     <div>
                       <p className="font-medium mb-2">Address:</p>
                       <p className="text-gray-700">
-                        123 Elegance Avenue
-                        <br />
-                        Lekki Phase 1
-                        <br />
-                        Lagos, Nigeria
+                      Unity estate, block 34, 
+                          <br />
+                          Abiodun Lawson Cresent, Amuwo Odofin,
+                          <br />
+                          {`Lagos, Nigeria`}
                       </p>
 
                       <div className="mt-6">
@@ -211,7 +211,7 @@ export function FloatingContactBubbles() {
                     </div>
                     <div className="rounded-lg overflow-hidden h-[200px]">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7286885532443!2d3.4651!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53aec4dd92d%3A0x5e34fe6a84cdcd53!2sLekki%20Phase%201%2C%20Lekki%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.406830819561!2d3.297275971921901!3d6.470039109488566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b892646649321%3A0x1c14381d512253e8!2s34%20Abiodun%20Lawson%20Cres%2C%20Amuwo%20Odofin%20Estate%2C%20Lagos%20102102%2C%20Lagos!5e0!3m2!1sen!2sng!4v1744843109574!5m2!1sen!2sng"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}

@@ -31,8 +31,8 @@ export default function CollectionsPage() {
       id: "2",
       name: "Sweet Lychee",
       description: "Juicy, vibrant, and irresistibly sweet. Sweet Lychee fills your space with the fresh, tropical aroma of ripe lychees, fruity, floral, and oh-so-refreshing. One light, and your room transforms into a sweet escape.",
-      image: "/products/IMG_2245.JPG",
-      price: "₦10,000",
+      image: "/products/sweet.jpeg",
+      price: "₦13,000",
       category: "Signature",
     },
     {

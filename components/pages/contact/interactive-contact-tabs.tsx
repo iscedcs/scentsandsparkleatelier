@@ -196,8 +196,8 @@ export function InteractiveContactTabs() {
                       <div>
                         <h3 className="font-medium text-lg mb-1">Call Us</h3>
                         <p className="text-gray-600 mb-1">Customer Service:</p>
-                        <a href="tel:+2348012345678" className="text-primary hover:underline">
-                          +234 801 234 5678
+                        <a href="tel:+2348060550787" className="text-primary hover:underline">
+                        +2348060550787
                         </a>
                       </div>
                     </div>
@@ -211,9 +211,9 @@ export function InteractiveContactTabs() {
                       <div>
                         <h3 className="font-medium text-lg mb-1">Visit Our Studio</h3>
                         <p className="text-gray-600">
-                          123 Elegance Avenue
+                        Unity estate, block 34, 
                           <br />
-                          Lekki Phase 1
+                          Abiodun Lawson Cresent, Amuwo Odofin,
                           <br />
                           {`Lagos, Nigeria`}
                         </p>
@@ -252,9 +252,9 @@ export function InteractiveContactTabs() {
                       <div className="mb-6">
                         <p className="font-medium">Address:</p>
                         <p className="text-gray-600">
-                          123 Elegance Avenue
+                        Unity estate, block 34, 
                           <br />
-                          Lekki Phase 1
+                          Abiodun Lawson Cresent, Amuwo Odofin,
                           <br />
                           {`Lagos, Nigeria`}
                         </p>
@@ -272,7 +272,7 @@ export function InteractiveContactTabs() {
                     </div>
                     <div className="md:col-span-2 rounded-lg overflow-hidden h-[300px]">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7286885532443!2d3.4651!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53aec4dd92d%3A0x5e34fe6a84cdcd53!2sLekki%20Phase%201%2C%20Lekki%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.406830819561!2d3.297275971921901!3d6.470039109488566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b892646649321%3A0x1c14381d512253e8!2s34%20Abiodun%20Lawson%20Cres%2C%20Amuwo%20Odofin%20Estate%2C%20Lagos%20102102%2C%20Lagos!5e0!3m2!1sen!2sng!4v1744843109574!5m2!1sen!2sng"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
