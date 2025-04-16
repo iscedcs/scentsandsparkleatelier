@@ -13,17 +13,17 @@ export function FeaturedProducts() {
 
   const products = [
     {
-      name: "Love Spell",
+      name: "Sweet Lychee",
       description: "100% Natural Soy Candle, hand poured with love",
-      image: "/products/IMG_2245.JPG",
+      image: "/products/sweet.jpeg",
     },
     {
-      name: "Sweet Lychee",
+      name: "Fruití",
       description: "100% Natural Soy Candle, hand poured with love",
       image: "/products/IMG_2256.JPG",
     },
     {
-      name: "Fruití",
+      name: "Love Spell",
       description: "100% Natural Soy Candle with dried fruit pieces",
       image: "/products/IMG_2334.JPG",
     },

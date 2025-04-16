@@ -15,7 +15,7 @@ export function HeroSection() {
 
   const slides = [
     {
-      image: "/products/IMG_2245.JPG",
+      image: "/products/sweet.jpeg",
       title: "Transform Your Space",
       subtitle: "With Intentional Scents",
     },

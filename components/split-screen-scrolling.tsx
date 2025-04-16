@@ -36,7 +36,7 @@ export function SplitScreenScrolling() {
             <motion.div style={{ opacity: leftOpacity, y: leftY }} className="h-full w-full flex flex-col gap-8">
               <div className="relative flex-1 rounded-lg overflow-hidden">
                 <video src="/video/IMG_6172.mp4" autoPlay loop muted playsInline></video>
-                {/* <Image src="/products/IMG_2245.JPG" alt="Selecting premium ingredients" fill className="object-cover" /> */}
+                {/* <Image src="/products/sweet.jpeg" alt="Selecting premium ingredients" fill className="object-cover" /> */}
                 <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
                   <h3 className="font-heading text-xl">Selecting Premium Ingredients</h3>
                 </div>

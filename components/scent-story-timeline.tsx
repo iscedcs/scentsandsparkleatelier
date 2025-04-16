@@ -29,7 +29,7 @@ export function ScentStoryTimeline() {
       title: "The Beginning",
       description:
         "Our journey began with a simple passion for creating warm, comforting spaces through high-quality scented candles.",
-      image: "/products/IMG_2245.JPG",
+      image: "/products/sweet.jpeg",
     },
     {
       year: "2021",
