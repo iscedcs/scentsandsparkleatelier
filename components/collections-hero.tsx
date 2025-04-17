@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
+import MaxWidthWrapper from "./shared/max-widthwrapper"
 
 export function CollectionsHero() {
   const ref = useRef(null)
@@ -24,12 +25,14 @@ export function CollectionsHero() {
         </div>
       </motion.div>
 
-      <div className="left-4 relative z-20 text-white">
+      {/* max-w-full mx-auto px-4  md:max-w-screen-md lg:max-w-7xl */}
+      <div className=" md:max-w-screen-md ld:max-w-7xl max-w-full px-4 mx-px ">
+      <div className="left-14  relative z-20 text-white">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl"
+          className="max-w-5xl"
         >
           <motion.p
             className="text-lg mb-2 text-primary"
@@ -55,10 +58,10 @@ export function CollectionsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            {`Explore our range of premium, handcrafted candles and home fragrances, designed to transform your space and
-            elevate your everyday moments.`}
+            {`Explore our range of premium, handcrafted candles and home fragrances.`}
           </motion.p>
         </motion.div>
+      </div>
       </div>
     </section>
   )

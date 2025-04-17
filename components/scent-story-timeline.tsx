@@ -43,7 +43,7 @@ export function ScentStoryTimeline() {
       title: "Expanding Horizons",
       description:
         "We introduced new product lines including reed diffusers and room sprays to complement our candle collection.",
-      image: "/products/IMG_2336.JPG",
+      image: "/products/caramel.jpeg",
     },
     {
       year: "2023",
@@ -56,7 +56,7 @@ export function ScentStoryTimeline() {
       title: "Looking Forward",
       description:
         "Today, we continue to innovate and create new scent experiences while staying true to our commitment to quality and sustainability.",
-      image: "/products/IMG_2334.JPG",
+      image: "/products/photo_2025-04-13_22-16-27.jpg",
     },
   ]
 

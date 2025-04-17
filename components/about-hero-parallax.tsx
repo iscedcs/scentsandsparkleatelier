@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import { useRef } from "react"
+import MaxWidthWrapper from "./shared/max-widthwrapper"
 
 export function AboutHeroParallax() {
   const ref = useRef(null)
@@ -16,6 +17,7 @@ export function AboutHeroParallax() {
 
   return (
     <section ref={ref} className="relative pt-20 min-h-screen flex items-center overflow-hidden">
+
       <motion.div className="absolute inset-0" style={{ y, opacity }}>
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="w-full h-full relative">
@@ -29,9 +31,10 @@ export function AboutHeroParallax() {
         </div>
       </motion.div>
 
-      <div className=" left-4 relative z-20 text-white">
+        <MaxWidthWrapper>
+      <div className=" relative z-20 text-white">
         <motion.div
-          className="max-w-4xl"
+          className="max-w-6xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -46,7 +49,7 @@ export function AboutHeroParallax() {
           </motion.p>
 
           <motion.h1
-            className="font-heading text-4xl md:text-6xl lg:text-6xl mb-6"
+            className="font-heading max-w-4xl text-4xl md:text-6xl lg:text-6xl mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -54,7 +57,7 @@ export function AboutHeroParallax() {
             {`Crafting Intentional Scents For Every Space`}
           </motion.h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
             {[
               "We focus on creating premium, high-quality candles that stand the test of time.",
               "Our scents blend modern aesthetics with functional solutions to enhance any space.",
@@ -73,6 +76,7 @@ export function AboutHeroParallax() {
           </div>
         </motion.div>
       </div>
+        </MaxWidthWrapper>
     </section>
   )
 }

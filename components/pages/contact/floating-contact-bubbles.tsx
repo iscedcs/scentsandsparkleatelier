@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import MaxWidthWrapper from "@/components/shared/max-widthwrapper"
+import Link from "next/link"
 
 type BubbleType = "email" | "phone" | "message" | "location" | null
 
@@ -142,22 +143,22 @@ export function FloatingContactBubbles() {
                   <div className="space-y-6">
                     <div>
                       <p className="font-medium mb-2">For general inquiries:</p>
-                      <a href="mailto:info@scentsandsparkle.com" className="text-primary hover:underline text-lg">
+                      <Link href="mailto:info@scentsandsparkle.com" className="text-primary hover:underline text-lg">
                         info@scentsandsparkle.com
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <p className="font-medium mb-2">For wholesale inquiries:</p>
-                      <a href="mailto:wholesale@scentsandsparkle.com" className="text-primary hover:underline text-lg">
+                      <Link href="mailto:wholesale@scentsandsparkle.com" className="text-primary hover:underline text-lg">
                         wholesale@scentsandsparkle.com
-                      </a>
+                      </Link>
                     </div>
-                    <div>
+                    {/* <div>
                       <p className="font-medium mb-2">For press and media:</p>
-                      <a href="mailto:press@scentsandsparkle.com" className="text-primary hover:underline text-lg">
+                      <Link href="mailto:press@scentsandsparkle.com" className="text-primary hover:underline text-lg">
                         press@scentsandsparkle.com
-                      </a>
-                    </div>
+                      </Link>
+                    </div> */}
                   </div>
                 </div>
               )}
@@ -168,16 +169,16 @@ export function FloatingContactBubbles() {
                   <div className="space-y-6">
                     <div>
                       <p className="font-medium mb-2">Customer Service:</p>
-                      <a href="tel:+2348060550787" className="text-primary hover:underline text-lg">
+                      <Link href="tel:+2348060550787" className="text-primary hover:underline text-lg">
                       +2348060550787
-                      </a>
+                      </Link>
                       <p className="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
                     </div>
                     <div>
                       <p className="font-medium mb-2">Wholesale Department:</p>
-                      <a href="tel:+23408060550787" className="text-primary hover:underline text-lg">
+                      <Link href="tel:+23408060550787" className="text-primary hover:underline text-lg">
                       +2348060550787
-                      </a>
+                      </Link>
                       <p className="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 5:00 PM</p>
                     </div>
                   </div>

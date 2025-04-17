@@ -14,22 +14,22 @@ export function FeaturedProducts() {
   const products = [
     {
       name: "Sweet Lychee",
-      description: "100% Natural Soy Candle, hand poured with love",
+      description: "Perfect for: Brightening your space, lifting your mood, and indulging in a little sweetness.",
       image: "/products/sweet.jpeg",
     },
     {
       name: "Fruití",
-      description: "100% Natural Soy Candle, hand poured with love",
+      description: "Perfect for: Morning boosts, stress relief, and fresh, vibrant vibes.",
       image: "/products/IMG_2256.JPG",
     },
     {
-      name: "Love Spell",
-      description: "100% Natural Soy Candle with dried fruit pieces",
-      image: "/products/IMG_2334.JPG",
+      name: "Caramel Sundae",
+      description: "Perfect for: Cloudy days, self-care nights, and adding a touch of sweetness to your space.",
+      image: "/products/caramel.jpeg",
     },
     {
       name: "Love Spell",
-      description: "100% Natural Soy Candle, hand poured with love",
+      description: "Perfect for: Cozy nights, intimate moments, and setting a romantic mood.",
       image: "/products/IMG_2336.JPG",
     },
   ]
