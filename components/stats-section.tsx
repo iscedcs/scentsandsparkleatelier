@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { AnimatedCounter } from "./animated-counter"
+import MaxWidthWrapper from "./shared/max-widthwrapper"
 
 export function StatsSection() {
   const ref = useRef(null)
@@ -10,8 +11,8 @@ export function StatsSection() {
 
   const stats = [
     { value: 100, suffix: "%", label: "Natural Ingredients" },
-    { value: 50, suffix: "+", label: "Unique Scents" },
-    { value: 2000, suffix: "+", label: "Happy Customers" },
+    { value: 15, suffix: "+", label: "Unique Scents" },
+    { value: 100, suffix: "+", label: "Happy Customers" },
     { value: 3, suffix: "", label: "Years of Excellence" },
   ]
 
@@ -38,6 +39,7 @@ export function StatsSection() {
 
   return (
     <section ref={ref} className="py-20 bg-black text-white">
+      <MaxWidthWrapper>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -51,6 +53,7 @@ export function StatsSection() {
             </motion.div>
           ))}
         </motion.div>
+        </MaxWidthWrapper>
     </section>
   )
 }

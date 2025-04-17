@@ -22,6 +22,9 @@ export function HorizontalProductShowcase({ products, onProductClick }: Horizont
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+const [canScrollRight, setCanScrollRight] = useState(true)
+
 
   // Handle manual scrolling with buttons
   const scrollRight = () => {
@@ -41,12 +44,18 @@ export function HorizontalProductShowcase({ products, onProductClick }: Horizont
   // Update active index based on scroll position
   const updateActiveIndex = () => {
     if (containerRef.current) {
-      const scrollPosition = containerRef.current.scrollLeft
-      const itemWidth = containerRef.current.offsetWidth / 2.5 // Approximate width of each item
+      const container = containerRef.current
+      const scrollPosition = container.scrollLeft
+      const maxScroll = container.scrollWidth - container.clientWidth
+      const itemWidth = container.offsetWidth / 2.5
       const newIndex = Math.round(scrollPosition / itemWidth)
+      
       setActiveIndex(Math.min(newIndex, products.length - 1))
+      setCanScrollLeft(scrollPosition > 0)
+      setCanScrollRight(scrollPosition < maxScroll - 5) // margin of error
     }
   }
+  
 
   // Handle mouse drag for scrolling
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -95,20 +104,26 @@ export function HorizontalProductShowcase({ products, onProductClick }: Horizont
 
         <div className="relative">
           {/* Navigation Buttons */}
-          <button
-            onClick={scrollLeftHandler}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
-            aria-label="Previous products"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            onClick={scrollRight}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
-            aria-label="Next products"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+          {canScrollLeft && (
+            <button
+              onClick={scrollLeftHandler}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
+              aria-label="Previous products"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+          )}
+
+          {canScrollRight && (
+            <button
+              onClick={scrollRight}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
+              aria-label="Next products"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          )}
+
 
           {/* Horizontal Scrolling Container */}
           <div

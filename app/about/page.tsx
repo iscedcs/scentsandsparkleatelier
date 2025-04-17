@@ -45,7 +45,7 @@ export default function AboutPageEnhanced() {
               </p>
             </motion.div>
 
-            <ImageReveal src="/products/IMG_2337.JPG" alt="Our mission" />
+            <ImageReveal src="/images/ceo.jpg" alt="Our mission" />
           </div>
         </MaxWidthWrapper>
       </section>

@@ -29,97 +29,97 @@ export function TeamSpotlightCarousel() {
       name: "Amara Okafor",
       position: "Founder & Creative Director",
       bio: "Amara's passion for scents began in her grandmother's garden, where she learned about the emotional power of fragrances. With a background in aromatherapy and product design, she founded Scents & Sparkle Atelier to create intentional scents that transform spaces and evoke memories.",
-      image: "/products/IMG_2337.JPG?height=400&width=400&text=Amara",
+      image: "/images/ceo.jpg?height=400&width=400&text=Amara",
       socialLinks: {
         instagram: "https://instagram.com",
         email: "mailto:amara@scentsandsparkle.com",
         linkedin: "https://linkedin.com",
       },
     },
-    {
-      name: "Daniel Eze",
-      position: "Master Chandler",
-      bio: "Daniel brings over a decade of experience in candle making to our team. His meticulous attention to detail and commitment to quality ensures that every product meets our exacting standards. He leads our production team and constantly experiments with new techniques and materials.",
-      image: "/products/IMG_2337.JPG?height=400&width=400&text=Daniel",
-      socialLinks: {
-        instagram: "https://instagram.com",
-        email: "mailto:daniel@scentsandsparkle.com",
-      },
-    },
-    {
-      name: "Zainab Bello",
-      position: "Scent Developer",
-      bio: "With a background in perfumery and chemistry, Zainab is the nose behind our signature scents. She travels the world sourcing the finest fragrance oils and constantly experiments with new combinations to create unique, evocative scent profiles that tell a story.",
-      image: "/products/IMG_2337.JPG?height=400&width=400&text=Zainab",
-      socialLinks: {
-        instagram: "https://instagram.com",
-        email: "mailto:zainab@scentsandsparkle.com",
-        linkedin: "https://linkedin.com",
-      },
-    },
-    {
-      name: "Chidi Okonkwo",
-      position: "Sustainability Manager",
-      bio: "Chidi ensures that our commitment to sustainability is reflected in every aspect of our business. From sourcing eco-friendly materials to implementing waste reduction strategies, he works tirelessly to minimize our environmental footprint while maximizing our positive impact.",
-      image: "/products/IMG_2337.JPG?height=400&width=400&text=Chidi",
-      socialLinks: {
-        email: "mailto:chidi@scentsandsparkle.com",
-        linkedin: "https://linkedin.com",
-      },
-    },
+    // {
+    //   name: "Daniel Eze",
+    //   position: "Master Chandler",
+    //   bio: "Daniel brings over a decade of experience in candle making to our team. His meticulous attention to detail and commitment to quality ensures that every product meets our exacting standards. He leads our production team and constantly experiments with new techniques and materials.",
+    //   image: "/products/IMG_2337.JPG?height=400&width=400&text=Daniel",
+    //   socialLinks: {
+    //     instagram: "https://instagram.com",
+    //     email: "mailto:daniel@scentsandsparkle.com",
+    //   },
+    // },
+    // {
+    //   name: "Zainab Bello",
+    //   position: "Scent Developer",
+    //   bio: "With a background in perfumery and chemistry, Zainab is the nose behind our signature scents. She travels the world sourcing the finest fragrance oils and constantly experiments with new combinations to create unique, evocative scent profiles that tell a story.",
+    //   image: "/products/IMG_2337.JPG?height=400&width=400&text=Zainab",
+    //   socialLinks: {
+    //     instagram: "https://instagram.com",
+    //     email: "mailto:zainab@scentsandsparkle.com",
+    //     linkedin: "https://linkedin.com",
+    //   },
+    // },
+    // {
+    //   name: "Chidi Okonkwo",
+    //   position: "Sustainability Manager",
+    //   bio: "Chidi ensures that our commitment to sustainability is reflected in every aspect of our business. From sourcing eco-friendly materials to implementing waste reduction strategies, he works tirelessly to minimize our environmental footprint while maximizing our positive impact.",
+    //   image: "/products/IMG_2337.JPG?height=400&width=400&text=Chidi",
+    //   socialLinks: {
+    //     email: "mailto:chidi@scentsandsparkle.com",
+    //     linkedin: "https://linkedin.com",
+    //   },
+    // },
   ]
 
   // Handle autoplay
-  useEffect(() => {
-    if (autoplay) {
-      autoplayTimerRef.current = setInterval(() => {
-        setDirection(1)
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length)
-      }, 5000)
-    }
+  // useEffect(() => {
+  //   if (autoplay) {
+  //     autoplayTimerRef.current = setInterval(() => {
+  //       setDirection(1)
+  //       setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length)
+  //     }, 5000)
+  //   }
 
-    return () => {
-      if (autoplayTimerRef.current) {
-        clearInterval(autoplayTimerRef.current)
-      }
-    }
-  }, [autoplay, teamMembers.length])
+  //   return () => {
+  //     if (autoplayTimerRef.current) {
+  //       clearInterval(autoplayTimerRef.current)
+  //     }
+  //   }
+  // }, [autoplay, teamMembers.length])
 
-  const handleNext = () => {
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current)
-    }
-    setAutoplay(false)
-    setDirection(1)
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length)
-  }
+  // const handleNext = () => {
+  //   if (autoplayTimerRef.current) {
+  //     clearInterval(autoplayTimerRef.current)
+  //   }
+  //   setAutoplay(false)
+  //   setDirection(1)
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length)
+  // }
 
-  const handlePrevious = () => {
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current)
-    }
-    setAutoplay(false)
-    setDirection(-1)
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + teamMembers.length) % teamMembers.length)
-  }
+  // const handlePrevious = () => {
+  //   if (autoplayTimerRef.current) {
+  //     clearInterval(autoplayTimerRef.current)
+  //   }
+  //   setAutoplay(false)
+  //   setDirection(-1)
+  //   setCurrentIndex((prevIndex) => (prevIndex - 1 + teamMembers.length) % teamMembers.length)
+  // }
 
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.8,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.8,
-    }),
-  }
+  // const variants = {
+  //   enter: (direction: number) => ({
+  //     x: direction > 0 ? 1000 : -1000,
+  //     opacity: 0,
+  //     scale: 0.8,
+  //   }),
+  //   center: {
+  //     x: 0,
+  //     opacity: 1,
+  //     scale: 1,
+  //   },
+  //   exit: (direction: number) => ({
+  //     x: direction < 0 ? 1000 : -1000,
+  //     opacity: 0,
+  //     scale: 0.8,
+  //   }),
+  // }
 
   return (
     <section className="py-24 bg-white">
@@ -134,7 +134,7 @@ export function TeamSpotlightCarousel() {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Navigation Buttons */}
-          <button
+          {/* <button
             onClick={handlePrevious}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
             aria-label="Previous team member"
@@ -147,7 +147,7 @@ export function TeamSpotlightCarousel() {
             aria-label="Next team member"
           >
             <ChevronRight className="h-5 w-5" />
-          </button>
+          </button> */}
 
           {/* Team Member Carousel */}
           <div className="relative overflow-hidden h-[500px] rounded-xl bg-muted/20">
@@ -155,7 +155,7 @@ export function TeamSpotlightCarousel() {
               <motion.div
                 key={currentIndex}
                 custom={direction}
-                variants={variants}
+                // variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"

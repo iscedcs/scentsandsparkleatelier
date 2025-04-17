@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Instagram, Facebook, Mail } from "lucide-react"
 import MaxWidthWrapper from "./shared/max-widthwrapper"
+import { TiktokIcon } from "@/lib/icons"
 
 export function Footer({ className }: { className?: string }) {
   return (
@@ -42,13 +43,13 @@ export function Footer({ className }: { className?: string }) {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="font-heading text-xl mb-4">Connect With Us</h3>
             <div className="flex gap-4 mb-4">
-              <Link href="https://instagram.com" className="text-gray-400 hover:text-primary transition-colors">
+              <Link href="https://www.instagram.com/scentsandsparkle_atelier?igsh=bHpuc2J2anMwdHgz&utm_source=qr" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="https://facebook.com" className="text-gray-400 hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
+              <Link href="https://www.tiktok.com/@scentsandsparkle_atelier?_t=ZS-8vNB8ituytM&_r=1" className="text-gray-400 hover:text-primary transition-colors">
+                {TiktokIcon}
+                <span className="sr-only">Tiktok</span>
               </Link>
               <Link
                 href="mailto:info@scentsandsparkle.com"

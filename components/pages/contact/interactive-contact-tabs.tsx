@@ -223,10 +223,10 @@ export function InteractiveContactTabs() {
                     <div>
                       <h3 className="font-medium text-lg mb-4">Follow Us</h3>
                       <div className="flex gap-4">
-                        <SocialIcon href="https://instagram.com" name="Instagram" />
-                        <SocialIcon href="https://facebook.com" name="Facebook" />
-                        <SocialIcon href="https://twitter.com" name="Twitter" />
-                        <SocialIcon href="https://pinterest.com" name="Pinterest" />
+                        <SocialIcon href="https://www.instagram.com/scentsandsparkle_atelier?igsh=bHpuc2J2anMwdHgz&utm_source=qr" name="Instagram" />
+                        {/* <SocialIcon href="https://facebook.com" name="Facebook" /> */}
+                        {/* <SocialIcon href="https://twitter.com" name="Twitter" /> */}
+                        <SocialIcon href="https://www.tiktok.com/@scentsandsparkle_atelier?_t=ZS-8vNB8ituytM&_r=1" name="TikTok" />
                       </div>
                     </div>
                   </div>
@@ -345,7 +345,7 @@ function SocialIcon({ href, name }: { href: string; name: string }) {
           <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
         </svg>
       )}
-      {name === "Facebook" && (
+      {name === "TikTok" && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -358,10 +358,13 @@ function SocialIcon({ href, name }: { href: string; name: string }) {
           strokeLinejoin="round"
           className="text-primary"
         >
-          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          <path d="M9 2v12.5a3.5 3.5 0 1 1-3.5-3.5" />
+          <path d="M13 2c0 3.9 3.1 7 7 7" />
+          <path d="M13 5v10.5a6.5 6.5 0 1 1-6.5-6.5" />
         </svg>
       )}
-      {name === "Twitter" && (
+
+      {/* {name === "Twitter" && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -376,25 +379,7 @@ function SocialIcon({ href, name }: { href: string; name: string }) {
         >
           <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
         </svg>
-      )}
-      {name === "Pinterest" && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-primary"
-        >
-          <line x1="12" x2="12" y1="17" y2="22" />
-          <path d="M19 17c-2.3 2.3-5.7 2.3-8 0-2.3-2.3-2.3-5.7 0-8 2.3-2.3 5.7-2.3 8 0 1.7 1.7 2.2 4.2 1.4 6.3" />
-          <path d="M8 17c-2.3 2.3-5.7 2.3-8 0s-2.3-5.7 0-8 5.7-2.3 8 0c1.7 1.7 2.2 4.2 1.4 6.3" />
-        </svg>
-      )}
+      )} */}
     </a>
   )
 }

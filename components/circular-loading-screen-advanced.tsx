@@ -36,8 +36,7 @@ export function CircularLoadingScreenAdvanced({ onComplete }: CircularLoadingScr
     let percentage = 0
     incrementTimer.current = setInterval(() => {
       // Non-linear progress to make it feel more realistic
-      const increment =
-        percentage < 30 ? 1.2 : percentage < 60 ? 0.8 : percentage < 80 ? 0.5 : percentage < 95 ? 0.3 : 0.1
+      const increment = percentage < 70 ? 2.5 : percentage < 90 ? 1.5 : 1;
 
       percentage = Math.min(percentage + increment, 100)
       progressValue.set(percentage / 100)
@@ -53,7 +52,7 @@ export function CircularLoadingScreenAdvanced({ onComplete }: CircularLoadingScr
           }
         }, 800)
       }
-    }, 30)
+    }, 20)
 
     return () => {
       if (incrementTimer.current) clearInterval(incrementTimer.current)
