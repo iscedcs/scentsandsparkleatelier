@@ -99,12 +99,8 @@ export function SustainabilitySection() {
             className="relative h-[500px] rounded-lg overflow-hidden"
           >
             <div className="relative w-full h-full">
-              <Image
-                src="/products/photo_2025-04-13_22-16-04.jpg"
-                alt="Sustainable candle making"
-                fill
-                className="object-cover rounded-lg"
-              />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <video src="/video/bts.mp4" autoPlay loop muted playsInline className="object-cover " width={700}></video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-white font-heading text-xl">

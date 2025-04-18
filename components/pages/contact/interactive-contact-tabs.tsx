@@ -262,9 +262,7 @@ export function InteractiveContactTabs() {
                       <div>
                         <p className="font-medium">Business Hours:</p>
                         <p className="text-gray-600">
-                          Monday - Friday: 9:00 AM - 6:00 PM
-                          <br />
-                          Saturday: 10:00 AM - 4:00 PM
+                          Monday - Saturday: 9:00 AM - 6:00 PM
                           <br />
                           Sunday: Closed
                         </p>

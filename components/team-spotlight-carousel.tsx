@@ -5,6 +5,8 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight, Instagram, Mail, Linkedin } from "lucide-react"
 import MaxWidthWrapper from "./shared/max-widthwrapper"
+import Link from "next/link"
+import { Button } from "./ui/button"
 
 interface TeamMember {
   name: string
@@ -26,14 +28,13 @@ export function TeamSpotlightCarousel() {
 
   const teamMembers: TeamMember[] = [
     {
-      name: "Amara Okafor",
+      name: "Phyona Eneh",
       position: "Founder & Creative Director",
-      bio: "Amara's passion for scents began in her grandmother's garden, where she learned about the emotional power of fragrances. With a background in aromatherapy and product design, she founded Scents & Sparkle Atelier to create intentional scents that transform spaces and evoke memories.",
+      bio: "Phyona's passion for scents began in her grandmother's garden, where she learned about the emotional power of fragrances. With a background in aromatherapy and product design, she founded Scents & Sparkle Atelier to create intentional scents that transform spaces and evoke memories.",
       image: "/images/ceo.jpg?height=400&width=400&text=Amara",
       socialLinks: {
-        instagram: "https://instagram.com",
+        instagram: "https://www.instagram.com/scentsandsparkle_atelier?igsh=bHpuc2J2anMwdHgz&utm_source=qr",
         email: "mailto:amara@scentsandsparkle.com",
-        linkedin: "https://linkedin.com",
       },
     },
     // {
@@ -150,7 +151,7 @@ export function TeamSpotlightCarousel() {
           </button> */}
 
           {/* Team Member Carousel */}
-          <div className="relative overflow-hidden h-[500px] rounded-xl bg-muted/20">
+          <div className="relative overflow-hidden xl:h-[500px] h-screen rounded-xl bg-muted/20">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -166,46 +167,44 @@ export function TeamSpotlightCarousel() {
                 className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-8 p-8"
               >
                 {/* Team Member Image */}
-                <div className="relative rounded-lg overflow-hidden h-full">
+                <div className="relative rounded-lg overflow-hidden h-[200px] md:h-full">
                   <Image
                     src={teamMembers[currentIndex].image || "/products/IMG_2337.JPG"}
                     alt={teamMembers[currentIndex].name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top md:project-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <div className="flex gap-3">
                       {teamMembers[currentIndex].socialLinks.instagram && (
-                        <a
-                          href={teamMembers[currentIndex].socialLinks.instagram}
+                        <Link href={teamMembers[currentIndex].socialLinks.instagram}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-white/20 p-2 rounded-full hover:bg-primary transition-colors"
                           aria-label={`${teamMembers[currentIndex].name}'s Instagram`}
                         >
                           <Instagram className="h-5 w-5" />
-                        </a>
+                        </Link>
                       )}
                       {teamMembers[currentIndex].socialLinks.email && (
-                        <a
-                          href={teamMembers[currentIndex].socialLinks.email}
+                        <Link href={teamMembers[currentIndex].socialLinks.email}
                           className="bg-white/20 p-2 rounded-full hover:bg-primary transition-colors"
                           aria-label={`Email ${teamMembers[currentIndex].name}`}
                         >
                           <Mail className="h-5 w-5" />
-                        </a>
+                        </Link>
                       )}
                       {teamMembers[currentIndex].socialLinks.linkedin && (
-                        <a
-                          href={teamMembers[currentIndex].socialLinks.linkedin}
+                        <Link href={teamMembers[currentIndex].socialLinks.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-white/20 p-2 rounded-full hover:bg-primary transition-colors"
                           aria-label={`${teamMembers[currentIndex].name}'s LinkedIn`}
                         >
                           <Linkedin className="h-5 w-5" />
-                        </a>
+                        </Link>
                       )}
                     </div>
                   </div>
@@ -231,7 +230,7 @@ export function TeamSpotlightCarousel() {
           {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-8">
             {teamMembers.map((_, index) => (
-              <button
+              <Button
                 key={index}
                 onClick={() => {
                   setDirection(index > currentIndex ? 1 : -1)
@@ -245,7 +244,7 @@ export function TeamSpotlightCarousel() {
                   currentIndex === index ? "bg-primary w-6" : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to team member ${index + 1}`}
-              />
+              ></Button>
             ))}
           </div>
         </div>

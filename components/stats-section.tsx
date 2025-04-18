@@ -11,9 +11,9 @@ export function StatsSection() {
 
   const stats = [
     { value: 100, suffix: "%", label: "Natural Ingredients" },
-    { value: 15, suffix: "+", label: "Unique Scents" },
-    { value: 100, suffix: "+", label: "Happy Customers" },
-    { value: 3, suffix: "", label: "Years of Excellence" },
+    { value: 20, suffix: "+", label: "Unique Scents" },
+    { value: 1000, suffix: "+", label: "Happy Customers" },
+    { value: 5, suffix: "", label: "Years of Excellence" },
   ]
 
   const containerVariants = {

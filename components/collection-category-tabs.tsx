@@ -10,12 +10,12 @@ interface CollectionCategoryTabsProps {
 
 export function CollectionCategoryTabs({ categories, activeCategory, onChange }: CollectionCategoryTabsProps) {
   return (
-    <div className="relative mb-16">
+    <div className="relative mb-12 md:mb-16">
       <div className="flex justify-center">
-        <div className="inline-flex border-b border-gray-200">
+        <div className="flex flex-wrap justify-center border-b border-gray-200 w-full md:inline-flex md:w-auto">
           <button
             className={cn(
-              "relative px-6 py-3 text-sm font-medium transition-colors",
+              "relative px-4 py-2 md:px-6 md:py-3 text-base md:text-sm font-medium transition-colors min-w-[100px] text-center",
               activeCategory === null ? "text-primary" : "text-gray-500 hover:text-gray-800",
             )}
             onClick={() => onChange(null)}
@@ -33,7 +33,7 @@ export function CollectionCategoryTabs({ categories, activeCategory, onChange }:
             <button
               key={category}
               className={cn(
-                "relative px-6 py-3 text-sm font-medium transition-colors",
+                "relative px-4 py-2 md:px-6 md:py-3 text-base md:text-sm font-medium transition-colors min-w-[100px] text-center",
                 activeCategory === category ? "text-primary" : "text-gray-500 hover:text-gray-800",
               )}
               onClick={() => onChange(category)}

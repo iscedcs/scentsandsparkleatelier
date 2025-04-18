@@ -24,7 +24,7 @@ export function Footer({ className }: { className?: string }) {
 
           <div className="flex flex-col items-center md:items-start">
             <h3 className="font-heading text-xl mb-4">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col text-center md:text-left gap-2">
               <Link href="/" className="text-sm text-gray-400 hover:text-primary transition-colors">
                 Home
               </Link>

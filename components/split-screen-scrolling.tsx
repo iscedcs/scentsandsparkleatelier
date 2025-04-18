@@ -43,7 +43,7 @@ export function SplitScreenScrolling() {
               </div>
               <div className="relative flex-1 rounded-lg overflow-hidden">
                 <Image src="/products/IMG_2337.JPG" alt="Crafting by hand" fill className="object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
                   <h3 className="font-heading text-xl">Crafting By Hand</h3>
                 </div>
               </div>
@@ -60,36 +60,36 @@ export function SplitScreenScrolling() {
                 <div>
                   <h3 className="font-heading text-2xl mb-4">1. Sourcing the Finest Materials</h3>
                   <p className="text-gray-700">
-                    We begin by sourcing the highest quality ingredients from sustainable suppliers. Our soy wax is 100%
+                    {`We begin by sourcing the highest quality ingredients from sustainable suppliers. Our soy wax is 100%
                     natural and our fragrance oils are premium quality, free from harmful chemicals and phthalates. We
-                    believe that exceptional scents start with exceptional ingredients.
+                    believe that exceptional scents start with exceptional ingredients.`}
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-heading text-2xl mb-4">2. Artisanal Blending</h3>
                   <p className="text-gray-700">
-                    Our master craftspeople carefully blend fragrance oils to create unique, balanced scents that evoke
+                    {`Our master craftspeople carefully blend fragrance oils to create unique, balanced scents that evoke
                     specific moods and atmospheres. Each scent undergoes multiple iterations and testing to ensure the
-                    perfect balance and throw.
+                    perfect balance and throw.`}
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-heading text-2xl mb-4">3. Hand Pouring</h3>
                   <p className="text-gray-700">
-                    Every candle is hand-poured in small batches to ensure quality and attention to detail. We carefully
+                   {` Every candle is hand-poured in small batches to ensure quality and attention to detail. We carefully
                     monitor temperature and setting conditions to create the perfect candle every time. This artisanal
-                    approach allows us to maintain the highest standards of quality.
+                    approach allows us to maintain the highest standards of quality.`}
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-heading text-2xl mb-4">4. Curing & Quality Control</h3>
                   <p className="text-gray-700">
-                    After pouring, our candles cure for at least 48 hours to allow the fragrance to properly bind with
+                   {` After pouring, our candles cure for at least 48 hours to allow the fragrance to properly bind with
                     the wax. Each candle undergoes rigorous quality control checks before being packaged in our
-                    eco-friendly, elegant packaging.
+                    eco-friendly, elegant packaging.`}
                   </p>
                 </div>
               </div>
