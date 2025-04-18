@@ -143,13 +143,13 @@ export function FloatingContactBubbles() {
                   <div className="space-y-6">
                     <div>
                       <p className="font-medium mb-2">For general inquiries:</p>
-                      <Link href="mailto:info@scentsandsparkle.com" className="text-primary hover:underline text-lg">
+                      <Link href="mailto:scentsandsparkle.atelier@gmail.com" className="text-primary hover:underline text-lg">
                         info@scentsandsparkle.com
                       </Link>
                     </div>
                     <div>
                       <p className="font-medium mb-2">For wholesale inquiries:</p>
-                      <Link href="mailto:wholesale@scentsandsparkle.com" className="text-primary hover:underline text-lg">
+                      <Link href="mailto:scentsandsparkle.atelier@gmail.com" className="text-primary hover:underline text-lg">
                         wholesale@scentsandsparkle.com
                       </Link>
                     </div>
