@@ -30,7 +30,7 @@ export function TeamSpotlightCarousel() {
     {
       name: "Phyona Eneh",
       position: "Founder & Creative Director",
-      bio: "Phyona's passion for scents began in her grandmother's garden, where she learned about the emotional power of fragrances. With a background in aromatherapy and product design, she founded Scents & Sparkle Atelier to create intentional scents that transform spaces and evoke memories.",
+      bio: "Phyona, a driven entrepreneur with a flair for aromatherapy and product design, founded Scents & Sparkle Atelier to share her love for transformative fragrances. She creates scents that do more than fill a room—they connect with your emotions, elevate your space, and bring your favorite memories to life, making every moment feel uniquely yours.",
       image: "/images/ceo.jpg?height=400&width=400&text=Amara",
       socialLinks: {
         instagram: "https://www.instagram.com/scentsandsparkle_atelier?igsh=bHpuc2J2anMwdHgz&utm_source=qr",
