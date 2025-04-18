@@ -180,11 +180,11 @@ export function InteractiveContactTabs() {
                         <h3 className="font-medium text-lg mb-1">Email Us</h3>
                         <p className="text-gray-600 mb-1">For general inquiries:</p>
                         <a href="mailto:info@scentsandsparkle.com" className="text-primary hover:underline">
-                          info@scentsandsparkle.com
+                        scentsandsparkle.atelier@gmail.com
                         </a>
                         <p className="text-gray-600 mt-2 mb-1">For wholesale inquiries:</p>
                         <a href="mailto:wholesale@scentsandsparkle.com" className="text-primary hover:underline">
-                          wholesale@scentsandsparkle.com
+                        scentsandsparkle.atelier@gmail.com
                         </a>
                       </div>
                     </div>

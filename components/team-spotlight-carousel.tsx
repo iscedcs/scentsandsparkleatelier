@@ -34,7 +34,7 @@ export function TeamSpotlightCarousel() {
       image: "/images/ceo.jpg?height=400&width=400&text=Amara",
       socialLinks: {
         instagram: "https://www.instagram.com/scentsandsparkle_atelier?igsh=bHpuc2J2anMwdHgz&utm_source=qr",
-        email: "mailto:amara@scentsandsparkle.com",
+        email: "mailto:scentsandsparkle.atelier@gmail.com",
       },
     },
     // {

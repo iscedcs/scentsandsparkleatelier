@@ -52,7 +52,7 @@ export function Footer({ className }: { className?: string }) {
                 <span className="sr-only">Tiktok</span>
               </Link>
               <Link
-                href="mailto:info@scentsandsparkle.com"
+                href="mailto:scentsandsparkle.atelier@gmail.com"
                 className="text-gray-400 hover:text-primary transition-colors"
               >
                 <Mail className="h-5 w-5" />
