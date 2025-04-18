@@ -42,12 +42,12 @@ export function CollectionMasonryGrid({ products, onProductClick }: CollectionMa
   // }
 
   return (
-    <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="flex flex-col gap-6"
+        className="flex flex-col gap-4 md:gap-6"
       >
         {column1.map((product) => (
           <MasonryItem key={product.id} product={product} onClick={() => onProductClick(product)} />
@@ -57,7 +57,7 @@ export function CollectionMasonryGrid({ products, onProductClick }: CollectionMa
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="flex flex-col gap-6 mt-12 md:mt-24"
+        className="flex flex-col gap-4 md:gap-6 mt-0 md:mt-24"
       >
         {column2.map((product) => (
           <MasonryItem key={product.id} product={product} onClick={() => onProductClick(product)} />
@@ -67,7 +67,7 @@ export function CollectionMasonryGrid({ products, onProductClick }: CollectionMa
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="flex flex-col gap-6 mt-0 md:mt-12"
+        className="flex flex-col gap-4 md:gap-6 mt-0 md:mt-12"
       >
         {column3.map((product) => (
           <MasonryItem key={product.id} product={product} onClick={() => onProductClick(product)} />
@@ -100,7 +100,7 @@ function MasonryItem({ product, onClick }: MasonryItemProps) {
       className="group cursor-pointer"
       onClick={onClick}
     >
-      <div className="relative aspect-[3/4] overflow-hidden rounded-lg mb-3">
+      <div className="relative aspect-square md:aspect-[3/4] overflow-hidden rounded-lg mb-4 md:mb-3">
         <Image
           src={product.image || "/placeholder.svg"}
           alt={product.name}
@@ -109,8 +109,8 @@ function MasonryItem({ product, onClick }: MasonryItemProps) {
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
       </div>
-      <h3 className="font-heading text-lg">{product.name}</h3>
-      <p className="text-primary font-medium">{product.price}</p>
+      <h3 className="font-heading textbase md:text-lg">{product.name}</h3>
+      <p className="text-primary font-medium text-sm md:text-base">{product.price}</p>
     </motion.div>
   )
 }

@@ -76,7 +76,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
               <Button asChild className="col-span-2 bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2">
-              <Link href="/">
+              <Link href="https://scentsandsparkleatelier.bumpa.shop/">
                 <ShoppingCart className="h-4 w-4" />
                  Order Now
                 </Link>

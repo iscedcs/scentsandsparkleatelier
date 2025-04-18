@@ -93,7 +93,7 @@ export function ImmersiveContactHero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl text-white/80 max-w-2xl mx-auto mb-12"
+            className="md:text-xl text-base text-white/80 max-w-2xl mx-auto mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}

@@ -68,12 +68,12 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
   }
 
   return (
-    <section className="py-20 bg-muted/50">
+    <section className="py-12 md:py-20 bg-muted/50">
         <MaxWidthWrapper>
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl">Featured Collection</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="font-heading text-2xl md:text-4xl">Featured Collection</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
-          <p className="text-gray-700 max-w-2xl mx-auto">
+          <p className="text-gray-700 max-w-2xl mx-auto text-sm md:text-base">
             {`Explore our most popular scents, crafted with premium ingredients and designed to transform your space.`}
           </p>
         </div>
@@ -96,26 +96,27 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center"
             >
-              <div className="relative aspect-square rounded-lg overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-square rounded-lg overflow-hidden">
                 <Image
                   src={currentProduct.image || "/placeholder.svg"}
                   alt={currentProduct.name}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 
               <div className="flex flex-col">
-                <h3 className="font-heading text-3xl mb-2">{currentProduct.name}</h3>
-                <p className="text-primary text-xl font-medium mb-6">{currentProduct.price}</p>
-                <div className="w-16 h-0.5 bg-primary mb-6"></div>
-                <p className="text-gray-700 mb-6">{currentProduct.description}</p>
+                <h3 className="font-heading text-2xl md:text-3xl mb-2">{currentProduct.name}</h3>
+                <p className="text-primary text-lg md:text-xl font-medium mb-6">{currentProduct.price}</p>
+                <div className="w-16 h-0.5 bg-primary mb-4 md:mb-6"></div>
+                <p className="text-gray-700 mb-4 md:mb-6 text-sm md:text-base">{currentProduct.description}</p>
 
-                <div className="mb-8">
-                  <h4 className="font-medium mb-3">Features:</h4>
-                  <ul className="space-y-2">
+                <div className="mb-4 md:mb-8">
+                  <h4 className="font-medium mb-3 text-sm md:text-base">Features:</h4>
+                  <ul className="space-y-2 text-sm md:text-base">
                     <li className="flex items-start">
                       <span className="text-primary mr-2">•</span>
                       <span>100% Natural Soy Wax</span>
@@ -137,7 +138,7 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
 
                 <div className="mt-auto">
                   <Button asChild className="bg-primary hover:bg-primary/90 text-white">
-                  <Link href=''>
+                  <Link href='https://scentsandsparkleatelier.bumpa.shop/'>
                   Order Now
                   </Link>
                   </Button>
@@ -148,14 +149,14 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
 
           <button
             onClick={handlePrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors z-10"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors z-10"
             aria-label="Previous product"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors z-10"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors z-10"
             aria-label="Next product"
           >
             <ChevronRight className="h-5 w-5" />

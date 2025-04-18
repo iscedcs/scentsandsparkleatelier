@@ -172,14 +172,15 @@ export function FloatingContactBubbles() {
                       <Link href="tel:+2348060550787" className="text-primary hover:underline text-lg">
                       +2348060550787
                       </Link>
-                      <p className="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                      <p className="text-gray-600 mt-1">Monday - Saturday: 9:00 AM - 6:00 PM
+                      </p>
                     </div>
                     <div>
                       <p className="font-medium mb-2">Wholesale Department:</p>
                       <Link href="tel:+23408060550787" className="text-primary hover:underline text-lg">
                       +2348060550787
                       </Link>
-                      <p className="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                      <p className="text-gray-600 mt-1">Monday - Saturday: 9:00 AM - 6:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -202,9 +203,7 @@ export function FloatingContactBubbles() {
                       <div className="mt-6">
                         <p className="font-medium mb-2">Business Hours:</p>
                         <p className="text-gray-700">
-                          Monday - Friday: 9:00 AM - 6:00 PM
-                          <br />
-                          Saturday: 10:00 AM - 4:00 PM
+                        Monday - Saturday: 9:00 AM - 6:00 PM
                           <br />
                           Sunday: Closed
                         </p>
