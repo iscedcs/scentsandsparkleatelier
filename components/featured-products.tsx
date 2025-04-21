@@ -14,22 +14,22 @@ export function FeaturedProducts() {
   const products = [
     {
       name: "Sweet Lychee",
-      description: "Perfect for: Brightening your space, lifting your mood, and indulging in a little sweetness.",
+      description: "Juicy, vibrant, and irresistibly sweet. Sweet Lychee fills your space with the fresh, tropical aroma of bergamot, vetiver leathery undertone and floral scent of ylang ylang. One light, and your room transforms into a sweet escape.",
       image: "/products/sweet.jpeg",
     },
     {
-      name: "Fruití",
-      description: "Perfect for: Morning boosts, stress relief, and fresh, vibrant vibes.",
+      name: "Fruiti",
+      description: "These candles combine the natural essence of citrus fruits – lemons, limes, oranges, and grapefruits – to create a refreshing ambiance that's perfect for any room.",
       image: "/products/IMG_2256.JPG",
     },
     {
       name: "Caramel Sundae",
-      description: "Perfect for: Cloudy days, self-care nights, and adding a touch of sweetness to your space.",
+      description: "This candle smells like caramel, maple, Irish sugar and vanilla sugar. Perfect for rainy and cloudy days.",
       image: "/products/caramel.jpeg",
     },
     {
       name: "Love Spell",
-      description: "Perfect for: Cozy nights, intimate moments, and setting a romantic mood.",
+      description: "Soft, romantic, and enchanting. Love Spell wraps your space in a dreamy blend of sweet notes of cashmere vanilla, pomegranate, blueberry muffin and many more creating an atmosphere of warmth and affection. One light, and it’s love at first scent.",
       image: "/products/IMG_2336.JPG",
     },
   ]

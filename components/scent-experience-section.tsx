@@ -14,15 +14,15 @@ export function ScentExperienceSection() {
   const scentExperiences = [
     {
       name: "Sweet Lychee",
-      description: "A warm, inviting blend of vanilla and amber that creates a sense of comfort and intimacy.",
+      description: "Juicy, vibrant, and irresistibly sweet. Sweet Lychee fills your space with the fresh, tropical aroma of bergamot, vetiver leathery undertone and floral scent of ylang ylang. One light, and your room transforms into a sweet escape.",
       mood: "Romantic & Cozy",
       notes: ["Vanilla", "Amber", "Sandalwood"],
       image: "/products/sweet.jpeg",
       color: "bg-rose-50",
     },
     {
-      name: "Fruití ",
-      description: "A bright, fruity fragrance that brings a refreshing energy to any space.",
+      name: "Fruiti ",
+      description: "Citrus scents are known to reduce stress and anxiety, promoting a sense of calm and well-being. invigorating aroma of citrus scented candles, expertly crafted to uplift and revitalize your space. These candles combine the natural essence of citrus fruits – lemons, limes, oranges, and grapefruits – to create a refreshing ambiance that's perfect for any room.",
       mood: "Uplifting & Energizing",
       notes: ["Lychee", "Rose", "Fresh Air"],
       image: "/products/IMG_2256.JPG",
@@ -30,7 +30,7 @@ export function ScentExperienceSection() {
     },
     {
       name: "Love Spell",
-      description: "A vibrant medley of citrus and tropical fruits that awakens the senses and brightens your space.",
+      description: "Soft, romantic, and enchanting. Love Spell wraps your space in a dreamy blend of sweet notes of cashmere vanilla, pomegranate, blueberry muffin and many more creating an atmosphere of warmth and affection. One light, and it’s love at first scent.",
       mood: "Refreshing & Vibrant",
       notes: ["Orange", "Pineapple", "Mango"],
       image: "/products/IMG_2334.JPG",

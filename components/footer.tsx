@@ -48,7 +48,7 @@ export function Footer({ className }: { className?: string }) {
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link href="https://www.tiktok.com/@scentsandsparkle_atelier?_t=ZS-8vNB8ituytM&_r=1" className="text-gray-400 hover:text-primary transition-colors">
-                {TiktokIcon}
+                {TiktokIcon }
                 <span className="sr-only">Tiktok</span>
               </Link>
               <Link

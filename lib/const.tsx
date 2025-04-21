@@ -4,7 +4,7 @@ export const products: Product[] = [
     {
       id: "1",
       name: "Love Spell Scented Candle",
-      description: "Soft, romantic, and oh-so-enchanting. Love Spell wraps your space in a dreamy blend of sweet and floral notes, creating an atmosphere of warmth and affection. One light, and it’s love at first scent.",
+      description: "Soft, romantic, and enchanting. Love Spell wraps your space in a dreamy blend of sweet notes of cashmere vanilla, pomegranate, blueberry muffin and many more creating an atmosphere of warmth and affection. One light, and it’s love at first scent.",
       image: "/products/IMG_2336.JPG",
       price: "₦13,000",
       category: "Signature",
@@ -12,15 +12,15 @@ export const products: Product[] = [
     {
       id: "2",
       name: "Sweet Lychee",
-      description: "Juicy, vibrant, and irresistibly sweet. Sweet Lychee fills your space with the fresh, tropical aroma of ripe lychees, fruity, floral, and oh-so-refreshing. One light, and your room transforms into a sweet escape.",
+      description: "Juicy, vibrant, and irresistibly sweet. Sweet Lychee fills your space with the fresh, tropical aroma of bergamot, vetiver leathery undertone and floral scent of ylang ylang. One light, and your room transforms into a sweet escape.",
       image: "/products/sweet.jpeg",
       price: "₦13,000",
       category: "Signature",
     },
     {
       id: "3",
-      name: "Fruití",
-      description: "Bright, zesty, and oh-so-refreshing. Fruiti is packed with the uplifting scent of lemons, oranges, grapefruits, strawberries, and bananas blended to awaken your senses and bring instant energy to your space. Known to ease stress and boost your mood.",
+      name: "Fruiti",
+      description: "Citrus scents are known to reduce stress and anxiety, promoting a sense of calm and well-being. invigorating aroma of citrus scented candles, expertly crafted to uplift and revitalize your space. These candles combine the natural essence of citrus fruits – lemons, limes, oranges, and grapefruits – to create a refreshing ambiance that's perfect for any room.",
       image: "/products/IMG_2256.JPG",
       price: "₦12,000",
       category: "Signature",
@@ -28,7 +28,7 @@ export const products: Product[] = [
     {
       id: "4",
       name: "Habibi Tings",
-      description: "Light it up, this candle fills your space with a rich, cozy scent that lingers. A bold blend of warm cinnamon, deep woody notes, and a touch of sweet blood orange. Comfort in a jar, crafted just for you.",
+      description: "Light it up, this candle fills your space with a rich, cozy scent that lingers. A bold blend of warm cinnamon, deep woody notes, and a touch of sweet blood orange. Comfort in a jar, crafted just for you.",
       image: "/products/photo_2025-04-13_22-16-01.jpg",
       price: "₦12,500",
       category: "Relaxing",
@@ -36,7 +36,7 @@ export const products: Product[] = [
     {
       id: "5",
       name: "Sweet Macarons",
-      description: "Looks like dessert, smells even better. This handcrafted macaron candle is whipped with a blend of coconut and soy wax for a smooth, luxurious finish. Infused with rich notes of berry blast, raspberry, strawberry milk, and vanilla.",
+      description: "This mouth watering macaron candle is perfect to give as a gift to your beloved ones, or to use as a home decoration. The candle is made from high quality soy wax and strongly scented with notes of buttermilk pancake, strawberry milk, blueberry muffin and vanilla.",
       image: "/products/photo_2025-04-13_22-15-45.jpg",
       price: "₦15,500",
       category: "Classic",
@@ -100,7 +100,7 @@ export const products: Product[] = [
     {
       id: "13",
       name: "Redolent",
-      description: "Rich, bold, and unforgettable. Redolent fills your space with a lingering aroma that captivates the senses. Warm, inviting, and deeply comforting. This is the scent that turns moments into memories.",
+      description: "Rich, bold, and unforgettable. Redolent fills your space with a lingering aroma that captivates the senses. Warm, inviting, and deeply comforting. This is the scent that turns moments into memories. Infused with notes of pomegranate, refreshing aroma of pineapple and passion fruit.",
       image: "/products/IMG_2242.JPG",
       price: "₦10,000",
       category: "Seasonal",
