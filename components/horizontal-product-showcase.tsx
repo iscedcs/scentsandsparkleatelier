@@ -105,23 +105,23 @@ const [canScrollRight, setCanScrollRight] = useState(true)
         <div className="relative">
           {/* Navigation Buttons */}
           {canScrollLeft && (
-            <button
+            <Button
               onClick={scrollLeftHandler}
               className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
               aria-label="Previous products"
             >
               <ChevronLeft className="h-5 w-5" />
-            </button>
+            </Button>
           )}
 
           {canScrollRight && (
-            <button
+            <Button
               onClick={scrollRight}
               className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-black hover:bg-primary hover:text-white transition-colors shadow-md"
               aria-label="Next products"
             >
               <ChevronRight className="h-5 w-5" />
-            </button>
+            </Button>
           )}
 
 

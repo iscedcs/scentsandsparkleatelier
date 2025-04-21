@@ -31,7 +31,7 @@ export function ImageReveal({ src, alt }: ImageRevealProps) {
 
       <div className="relative w-full h-full">
       <Image
-                src="/products/photo_2025-04-13_22-16-04.jpg"
+                src="/products/IMG_7226.JPG"
                 alt="Sustainable candle making"
                 fill
                 className="object-cover rounded-lg"

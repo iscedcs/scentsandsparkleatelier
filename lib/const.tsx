@@ -29,7 +29,7 @@ export const products: Product[] = [
       id: "4",
       name: "Habibi Tings",
       description: "Light it up, this candle fills your space with a rich, cozy scent that lingers. A bold blend of warm cinnamon, deep woody notes, and a touch of sweet blood orange. Comfort in a jar, crafted just for you.",
-      image: "/products/photo_2025-04-13_22-16-01.jpg",
+      image: "/products/IMG_7224.JPG",
       price: "₦12,500",
       category: "Relaxing",
     },

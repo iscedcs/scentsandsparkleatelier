@@ -41,8 +41,8 @@ const products = [
   {
     id: "5",
     name: "Dreamin’ Scented Candle",
-    description: "Soft, airy, and effortlessly calming. Dreamin’ is the perfect escape. With a delicate blend of soothing notes, this candle sets the mood for relaxation, reflection, and deep, peaceful rest. Light it up, close your eyes, and drift away.",
-    image: "/products/IMG_2337.JPG",
+    description: "Soft, airy, and effortlessly calming. Dreamin’ is the perfect escape. With a delicate blend of soothing notes, this candle sets the mood for relaxation, reflection, and deep, peaceful rest. Light it up, close your eyes, and drift away. ",
+    image: "/products/dreamin.jpeg",
     category: "Classic",
   },
 ]

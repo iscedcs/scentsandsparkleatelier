@@ -36,7 +36,7 @@ export function ScentInspiredContact() {
     {
       name: "Energizing",
       description: "Inquiries about our uplifting fragrances",
-      image: "/products/photo_2025-04-13_22-16-01.jpg",
+      image: "/products/IMG_7224.JPG",
       color: "bg-yellow-50 border-yellow-200",
       formLabel: "What energizing scent experience are you looking for?",
     },
