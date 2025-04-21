@@ -94,7 +94,7 @@ export function ScentExperienceSection() {
               </div>
 
               <h3 className="font-heading text-2xl mb-2">{scent.name}</h3>
-              <p className="text-gray-700 mb-4">{scent.description}</p>
+              <p className="text-gray-700 mb-4 line-clamp-3">{scent.description}</p>
 
               <div className="mt-auto">
                 <div className="mb-4">
