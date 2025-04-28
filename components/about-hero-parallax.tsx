@@ -21,8 +21,10 @@ export function AboutHeroParallax() {
       <motion.div className="absolute inset-0" style={{ y, opacity }}>
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="w-full h-full relative">
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+
           <Image
-            src="/products/photo_2025-04-13_22-16-15.jpg"
+            src="/products/photo_2025-04-13_22-16-47.jpg"
             alt="About Scents & Sparkle Atelier"
             fill
             className="object-cover"

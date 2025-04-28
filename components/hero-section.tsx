@@ -15,17 +15,17 @@ export function HeroSection() {
 
   const slides = [
     {
-      image: "/products/sweet.jpeg",
+      image: "/images/WhatsApp Image 2025-04-25 at 20.14.14_9a9644ef.jpg",
       title: "Transform Your Space",
       subtitle: "With Intentional Scents",
     },
     {
-      image: "/products/IMG_2256.JPG",
+      image: "/images/fruiti.jpg",
       title: "Handcrafted With Love",
       subtitle: "Premium Natural Soy Candles",
     },
     {
-      image: "/products/IMG_2334.JPG",
+      image: "/images/WhatsApp Image 2025-04-25 at 20.08.58_50a1e7e7.jpg",
       title: "Elevate Your Moments",
       subtitle: "Luxury Home Fragrances",
     },
@@ -54,6 +54,7 @@ export function HeroSection() {
           >
             <div className="absolute inset-0 bg-black/50 z-10"></div>
             <div className="relative w-full h-full">
+            <div className="absolute inset-0 bg-black/40 z-10"></div>
               <Image src={slide.image || "/products/IMG_2337.JPG"} alt={slide.title} fill className="object-cover" priority />
             </div>
           </div>

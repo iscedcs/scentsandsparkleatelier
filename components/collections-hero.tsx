@@ -20,6 +20,8 @@ export function CollectionsHero() {
       <motion.div className="absolute inset-0" style={{ y, opacity, }}>
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="w-full h-full relative">
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+
           <video src="/video/IMG_6170.mp4" loop muted playsInline autoPlay className="object-cover w-full"></video>
           {/* <Image src="/products/IMG_2337.JPG" alt="Our Collections" fill className="object-cover" priority /> */}
         </div>

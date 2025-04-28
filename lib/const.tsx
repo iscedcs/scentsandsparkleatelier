@@ -21,7 +21,7 @@ export const products: Product[] = [
       id: "3",
       name: "Fruiti",
       description: "Citrus scents are known to reduce stress and anxiety, promoting a sense of calm and well-being. invigorating aroma of citrus scented candles, expertly crafted to uplift and revitalize your space. These candles combine the natural essence of citrus fruits – lemons, limes, oranges, and grapefruits – to create a refreshing ambiance that's perfect for any room.",
-      image: "/products/IMG_2256.JPG",
+      image: "/images/fruiti.jpg",
       price: "₦12,000",
       category: "Signature",
     },
@@ -94,7 +94,7 @@ export const products: Product[] = [
       name: "Love Notes Diffuser",
       description: "Love Notes – Soft, Sweet, Romantic A scent that feels like love at first whiff. Love Notes is a dreamy blend of soft florals, warm vanilla, and a hint of musk perfect for creating a cozy, intimate atmosphere.",
       image: "/products/photo_2025-04-13_22-16-35.jpg",
-      price: "#15,000",
+      price: "₦15,000",
       category: "Seasonal",
     },
     {

@@ -49,7 +49,8 @@ export function ImmersiveContactHero() {
       >
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="w-full h-full relative">
-          <Image src="/products/IMG_2256.JPG" alt="Contact Us" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <Image src="/images/WhatsApp Image 2025-04-25 at 20.07.44_7b386881.jpg" alt="Contact Us" fill className="object-cover" priority />
         </div>
       </motion.div>
 

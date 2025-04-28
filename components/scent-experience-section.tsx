@@ -16,7 +16,7 @@ export function ScentExperienceSection() {
       name: "Sweet Lychee",
       description: "Juicy, vibrant, and irresistibly sweet. Sweet Lychee fills your space with the fresh, tropical aroma of bergamot, vetiver leathery undertone and floral scent of ylang ylang. One light, and your room transforms into a sweet escape.",
       mood: "Refreshing & Vibrant",
-      notes: ["Bergamot", "Vetiver leathery", "Ylang Ylang"],
+      notes: ["Bergamot", "Vetiver", "Ylang Ylang"],
       image: "/products/sweet.jpeg",
       color: "bg-rose-50",
     },
@@ -25,7 +25,7 @@ export function ScentExperienceSection() {
       description: "Citrus scents are known to reduce stress and anxiety, promoting a sense of calm and well-being. invigorating aroma of citrus scented candles, expertly crafted to uplift and revitalize your space. These candles combine the natural essence of citrus fruits – lemons, limes, oranges, and grapefruits – to create a refreshing ambiance that's perfect for any room.",
       mood: "Uplifting & Energizing",
       notes: ["Lemons", "Limes", "Oranges", "Grapefruits"],
-      image: "/products/IMG_2256.JPG",
+      image: "/images/fruiti.jpg",
       color: "bg-pink-50",
     },
     {

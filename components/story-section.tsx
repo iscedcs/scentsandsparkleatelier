@@ -48,7 +48,7 @@ export function StorySection() {
             className="relative h-[500px]"
           >
             <div className="relative w-full h-full">
-              <Image src="/products/IMG_2337.JPG" alt="Our premium candles" fill className="object-cover rounded-lg" />
+              <Image src="/images/WhatsApp Image 2025-04-25 at 20.07.44_7b386881.jpg" alt="Our premium candles" fill className="object-cover rounded-lg" />
             </div>
           </motion.div>
         </div>

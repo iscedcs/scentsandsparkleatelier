@@ -39,7 +39,7 @@ export function FAQSection() {
     {
       question: "Do you offer custom or corporate orders?",
       answer:
-        "Yes, we offer custom scents and packaging for special events, corporate gifts, and wholesale orders. Please contact our team at wholesale@scentsandsparkle.com for more information and pricing.",
+        "Yes, we offer custom scents and packaging for special events, corporate gifts, and wholesale orders. Please contact our team at  scentsandsparkle.atelier@gmail.com for more information and pricing.",
     },
     {
       question: "How should I care for my candle?",

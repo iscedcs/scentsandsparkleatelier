@@ -183,7 +183,7 @@ export function InteractiveContactTabs() {
                         scentsandsparkle.atelier@gmail.com
                         </a>
                         <p className="text-gray-600 mt-2 mb-1">For wholesale inquiries:</p>
-                        <a href="mailto:wholesale@scentsandsparkle.com" className="text-primary hover:underline">
+                        <a href="mailto: scentsandsparkle.atelier@gmail.com" className="text-primary hover:underline">
                         scentsandsparkle.atelier@gmail.com
                         </a>
                       </div>

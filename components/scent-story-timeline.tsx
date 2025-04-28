@@ -24,31 +24,31 @@ export function ScentStoryTimeline() {
 
   const timelineEvents: TimelineEvent[] = [
     {
-      year: "2021",
+      year: "Sep 2024",
       title: "The Beginning",
       description:
         "Our journey began with a simple passion for creating warm, comforting spaces through high-quality scented candles.",
       image: "/products/sweet.jpeg",
     },
     {
-      year: "2022",
+      year: "Oct 2024",
       title: "First Collection",
       description:
         "We launched our signature collection, featuring hand-poured soy candles with premium fragrance oils.",
-      image: "/products/IMG_2337.JPG",
+      image: "/images/WhatsApp Image 2025-04-25 at 20.14.14_d1769eb6.jpg",
     },
     {
-      year: "2023",
+      year: "2025",
       title: "Expanding Horizons",
       description:
         "We introduced new product lines including reed diffusers and room sprays to complement our candle collection.",
       image: "/products/caramel.jpeg",
     },
     {
-      year: "2024",
+      year: "2025",
       title: "Sustainability Focus",
       description: "We committed to eco-friendly practices, using only sustainable materials and recyclable packaging.",
-      image: "/products/IMG_2256.JPG",
+      image: "/images/fruiti.jpg",
     },
     {
       year: "2025",

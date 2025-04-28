@@ -21,7 +21,7 @@ const products = [
     id: "2",
     name: "Fruiti",
     description: "Citrus scents are known to reduce stress and anxiety, promoting a sense of calm and well-being. invigorating aroma of citrus scented candles, expertly crafted to uplift and revitalize your space. These candles combine the natural essence of citrus fruits – lemons, limes, oranges, and grapefruits – to create a refreshing ambiance that's perfect for any room.",
-    image: "/products/IMG_2256.JPG",
+    image: "/images/fruiti.jpg",
     category: "Signature",
   },
   {
