@@ -50,27 +50,6 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
               <p className="text-gray-700 mb-6">{product.description}</p>
             </div>
 
-            <div className="mb-8">
-              <h4 className="font-medium mb-3">Features:</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span>100% Natural Soy Wax</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span>Premium Fragrance Oils</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span>40+ Hour Burn Time</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span>Handcrafted in Small Batches</span>
-                </li>
-              </ul>
-            </div>
 
             
 
