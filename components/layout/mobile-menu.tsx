@@ -52,7 +52,7 @@ export default function MobileMenu({ isOpen, setIsOpen, handleNavigation }: Mobi
   />
     <motion.div
       className={cn(
-        "fixed top-0 right-0 bottom-0 w-[80%] rounded-l-3xl bg-primary z-40 md:hidden flex flex-col",
+        "fixed top-0 right-0 bottom-0 w-[80%] rounded-l-3xl bg-background z-40 md:hidden flex flex-col",
         isOpen ? "pointer-events-auto " : "pointer-events-none",
       )}
       initial="closed"
@@ -68,7 +68,7 @@ export default function MobileMenu({ isOpen, setIsOpen, handleNavigation }: Mobi
           <X className="h-8 w-8" />
         </Button>
       </div>
-      <nav className="flex flex-col text-background gap-4 items-center justify-center flex-1">
+      <nav className="flex flex-col text-primary gap-4 items-center justify-center flex-1">
         <Link href='/'
         className="flex items-center"
         data-cursor-hover
