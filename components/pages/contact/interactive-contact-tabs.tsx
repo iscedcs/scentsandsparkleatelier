@@ -47,12 +47,12 @@ export function InteractiveContactTabs() {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-muted/50 p-1 rounded-full">
-              <TabButton
+              {/* <TabButton
                 active={activeTab === "message"}
                 onClick={() => setActiveTab("message")}
                 icon={<MessageSquare className="h-4 w-4 mr-2" />}
                 label="Send Message"
-              />
+              /> */}
               <TabButton
                 active={activeTab === "info"}
                 onClick={() => setActiveTab("info")}
@@ -70,7 +70,7 @@ export function InteractiveContactTabs() {
 
           {/* Tab Content */}
           <AnimatePresence mode="wait">
-            {activeTab === "message" && (
+            {/* {activeTab === "message" && (
               <motion.div
                 key="message"
                 initial={{ opacity: 0, y: 20 }}
@@ -159,7 +159,7 @@ export function InteractiveContactTabs() {
                   </motion.div>
                 )}
               </motion.div>
-            )}
+            )} */}
 
             {activeTab === "info" && (
               <motion.div

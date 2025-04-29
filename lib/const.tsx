@@ -43,14 +43,6 @@ export const products: Product[] = [
     },
     {
       id: "6",
-      name: "Citrus Burst",
-      description: "An energizing blend of citrus notes that brings a fresh, clean scent to your space.",
-      image: "/products/IMG_2337.JPG",
-      price: "₦8,500",
-      category: "Energizing",
-    },
-    {
-      id: "7",
       name: "Earthy Room Spray",
       description: "Earthy – A Breath of Nature 🌿✨ Grounding, fresh, and effortlessly calming. Earthy brings the outdoors in with rich, natural notes that create a peaceful, refreshing atmosphere. One spritz, and your space feels like a deep breath of fresh air.",
       image: "/products/photo_2025-04-13_22-16-10.jpg",
@@ -58,7 +50,7 @@ export const products: Product[] = [
       category: "Fresh",
     },
     {
-      id: "8",
+      id: "7",
       name: "Love Notes Room Spray",
       description: "A scent that feels like a love letter in the air. Love Notes fills your space with a soft, warm fragrance that lingers beautifully, comforting and inviting, Just one spritz, and your room feels like magic.",
       image: "/products/photo_2025-04-13_22-16-15.jpg",
@@ -66,7 +58,7 @@ export const products: Product[] = [
       category: "Floral",
     },
     {
-      id: "9",
+      id: "8",
       name: "Charm Room Spray",
       description: "One spray, and your space comes alive. Charm is light, inviting, and lingers just enough to make an impression. Perfect for those who love a scent that feels warm, elegant, and effortlessly fresh.",
       image: "/products/photo_2025-04-13_22-16-23.jpg",
@@ -74,7 +66,7 @@ export const products: Product[] = [
       category: "Seasonal",
     },
     {
-      id: "10",
+      id: "9",
       name: "Citrus Diffuser",
       description: "Fresh, Zesty, Uplifting Bright, crisp, and full of life. This citrus-infused diffuser blends oranges, lemons, and grapefruits to energize your space and keep it smelling clean and refreshing all day.",
       image: "/products/photo_2025-04-13_22-16-30.jpg",
@@ -82,7 +74,7 @@ export const products: Product[] = [
       category: "Seasonal",
     },
     {
-      id: "11",
+      id: "10",
       name: "Oud Mist Diffuser",
       description: "Bold, Rich, Timeless Deep, woody, and effortlessly luxurious. Oud Mist fills your space with the warm, smoky essence of oud, blended with rich, lingering notes that create a sense of mystery and sophistication.",
       image: "/products/photo_2025-04-13_22-16-33.jpg",
@@ -90,15 +82,15 @@ export const products: Product[] = [
       category: "Seasonal",
     },
     {
-      id: "12",
+      id: "11",
       name: "Love Notes Diffuser",
       description: "Love Notes – Soft, Sweet, Romantic A scent that feels like love at first whiff. Love Notes is a dreamy blend of soft florals, warm vanilla, and a hint of musk perfect for creating a cozy, intimate atmosphere.",
       image: "/products/photo_2025-04-13_22-16-35.jpg",
-      price: "₦15,000",
+      price: "₦15,000 - ₦20,000",
       category: "Seasonal",
     },
     {
-      id: "13",
+      id: "12",
       name: "Redolent",
       description: "Rich, bold, and unforgettable. Redolent fills your space with a lingering aroma that captivates the senses. Warm, inviting, and deeply comforting. This is the scent that turns moments into memories. Infused with notes of pomegranate, refreshing aroma of pineapple and passion fruit.",
       image: "/products/IMG_2242.JPG",

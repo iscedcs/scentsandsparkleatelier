@@ -17,7 +17,7 @@ export function FloatingContactBubbles() {
   const isInView = useInView(ref, { once: false, amount: 0.2 })
 
   const bubbles = [
-    { type: "message" as BubbleType, icon: <MessageSquare className="h-6 w-6" />, label: "Send Message" },
+    // { type: "message" as BubbleType, icon: <MessageSquare className="h-6 w-6" />, label: "Send Message" },
     { type: "email" as BubbleType, icon: <Mail className="h-6 w-6" />, label: "Email Us" },
     { type: "phone" as BubbleType, icon: <Phone className="h-6 w-6" />, label: "Call Us" },
     { type: "location" as BubbleType, icon: <MapPin className="h-6 w-6" />, label: "Find Us" },
@@ -88,7 +88,7 @@ export function FloatingContactBubbles() {
                 <X className="h-5 w-5" />
               </button>
 
-              {activeBubble === "message" && (
+              {/* {activeBubble === "message" && (
                 <div>
                   <h3 className="font-heading text-2xl mb-6">Send Us a Message</h3>
                   <form className="space-y-6">
@@ -135,7 +135,7 @@ export function FloatingContactBubbles() {
                     <Button className="bg-primary hover:bg-primary/90 text-white">Send Message</Button>
                   </form>
                 </div>
-              )}
+              )} */}
 
               {activeBubble === "email" && (
                 <div>

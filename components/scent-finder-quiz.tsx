@@ -7,6 +7,7 @@ import { ArrowRight, Check, RefreshCw } from "lucide-react"
 import Image from "next/image"
 import type { Product } from "@/components/product-grid"
 import MaxWidthWrapper from "./shared/max-widthwrapper"
+import Link from "next/link"
 
 interface ScentFinderQuizProps {
   products: Product[]
@@ -189,7 +190,11 @@ export function ScentFinderQuiz({ products }: ScentFinderQuizProps) {
                       <p className="text-gray-700 mb-4">{recommendedProduct.description}</p>
                       <p className="text-primary font-medium mb-6">{recommendedProduct.price}</p>
                       <div className="flex gap-4">
-                        <Button className="bg-primary hover:bg-primary/90 text-white">View Product</Button>
+                        <Button asChild className="bg-primary hover:bg-primary/90 text-white">
+                        <Link href='https://scentsandsparkleatelier.bumpa.shop/'>
+                        View Product
+                        </Link>
+                        </Button>
                         <Button variant="outline" onClick={resetQuiz} className="flex items-center gap-2">
                           <RefreshCw className="h-4 w-4" />
                           Try Again

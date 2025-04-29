@@ -114,28 +114,6 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
                 <div className="w-16 h-0.5 bg-primary mb-4 md:mb-6"></div>
                 <p className="text-gray-700 mb-4 md:mb-6 text-sm md:text-base">{currentProduct.description}</p>
 
-                <div className="mb-4 md:mb-8">
-                  <h4 className="font-medium mb-3 text-sm md:text-base">Features:</h4>
-                  <ul className="space-y-2 text-sm md:text-base">
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>100% Natural Soy Wax</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Premium Fragrance Oils</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>40+ Hour Burn Time</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Handcrafted in Small Batches</span>
-                    </li>
-                  </ul>
-                </div>
-
                 <div className="mt-auto">
                   <Button asChild className="bg-primary hover:bg-primary/90 text-white">
                   <Link href='https://scentsandsparkleatelier.bumpa.shop/'>
