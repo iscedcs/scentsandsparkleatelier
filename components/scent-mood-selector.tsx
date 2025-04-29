@@ -32,7 +32,7 @@ export function ScentMoodSelector({ products, onProductClick }: ScentMoodSelecto
     {
       name: "Energizing",
       description: "Boost your mood and energy with these uplifting fragrances",
-      image: "/products/photo_2025-04-13_22-16-01.jpg",
+      image: "/images/fruiti.jpg",
       color: "bg-yellow-50",
     },
     {
