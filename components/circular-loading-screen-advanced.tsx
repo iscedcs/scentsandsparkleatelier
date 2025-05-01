@@ -64,7 +64,7 @@ export function CircularLoadingScreenAdvanced({ onComplete }: CircularLoadingScr
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center"
+          className="fixed inset-0 bg-gray-800 z-50 flex flex-col items-center justify-center"
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
@@ -161,11 +161,11 @@ export function CircularLoadingScreenAdvanced({ onComplete }: CircularLoadingScr
               className="relative z-10 flex items-center justify-center w-40 h-40"
             >
               <Image
-                src="/assets/logo.jpg"
+                src="/assets/logo-trans.png"
                 alt="Scents & Sparkle Atelier"
                 width={160}
                 height={64}
-                className="h-auto w-auto max-h-20 invert"
+                className="h-auto w-auto max-h-20"
               />
             </motion.div>
 

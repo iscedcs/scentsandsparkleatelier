@@ -19,26 +19,27 @@ export function AmbientAudioPlayer() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPanelVisible, setIsPanelVisible] = useState(false)
+  const [wasPlayingBeforeHidden, setWasPlayingBeforeHidden] = useState(false) // Track if audio was playing before page was hidden
 
   const scentAudios: ScentAudio[] = [
     {
       name: "Peaceful",
-    description: "Soft ambient background music perfect for relaxation and meditation.",
+      description: "Soft ambient background music perfect for relaxation and meditation.",
       audioSrc: "/sound/0452. Peaceful - AShamaluevMusic.mp3",
     },
     {
       name: "Soothing",
-    description: "Calm and relaxing music suitable for creating a serene environment.",
+      description: "Calm and relaxing music suitable for creating a serene environment.",
       audioSrc: "/sound/0455. Soothing - AShamaluevMusic.mp3",
     },
     {
       name: "Aura",
-    description: "An ambient track that brings a sense of calm and clarity.",
+      description: "An ambient track that brings a sense of calm and clarity.",
       audioSrc: "/sound/0454. Aura - AShamaluevMusic.mp3",
     },
     {
       name: "Silence",
-    description: "Minimalistic and gentle, perfect for background ambiance.",
+      description: "Minimalistic and gentle, perfect for background ambiance.",
       audioSrc: "/sound/0453. Silence - AShamaluevMusic.mp3",
     },
   ]
@@ -54,20 +55,47 @@ export function AmbientAudioPlayer() {
     audioRef.current = audio
     setCurrentAudio(firstAudio)
 
+    // Interaction handler to play audio
     const handleInteraction = () => {
       if (audioRef.current && !isPlaying) {
-        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {})
+        audioRef.current.play().then(() => {
+          setIsPlaying(true)
+        }).catch((err) => {
+          console.error("Playback failed:", err)
+        })
       }
-      document.removeEventListener("click", handleInteraction)
     }
 
+    // Add interaction listener initially
     document.addEventListener("click", handleInteraction)
+
+    // Handle page visibility change
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden" && audioRef.current) {
+        // Store whether the audio was playing before hiding
+        setWasPlayingBeforeHidden(isPlaying)
+        audioRef.current.pause()
+        setIsPlaying(false)
+      } else if (document.visibilityState === "visible" && audioRef.current) {
+        // When the page becomes visible, reattach the interaction listener
+        // to resume playback if the audio was playing before
+        if (wasPlayingBeforeHidden && !isPlaying) {
+          // Remove any existing listener to avoid duplicates
+          document.removeEventListener("click", handleInteraction)
+          document.addEventListener("click", handleInteraction)
+        }
+      }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange)
 
     return () => {
       document.removeEventListener("click", handleInteraction)
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
       audioRef.current?.pause()
+      document.querySelectorAll("audio").forEach((el) => el.pause())
     }
-  }, [])
+  }, []) // Removed isPlaying and wasPlayingBeforeHidden from dependencies
 
   useEffect(() => {
     if (audioRef.current) {
@@ -81,8 +109,12 @@ export function AmbientAudioPlayer() {
     if (isPlaying) {
       audioRef.current.pause()
       setIsPlaying(false)
+      setWasPlayingBeforeHidden(false) // Reset this to prevent auto-resume if manually paused
     } else {
-      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {})
+      audioRef.current.play().then(() => {
+        setIsPlaying(true)
+        setWasPlayingBeforeHidden(true) // Allow auto-resume if playing
+      }).catch(() => {})
     }
   }
 
@@ -110,6 +142,7 @@ export function AmbientAudioPlayer() {
     audioRef.current.play().then(() => {
       setCurrentAudio(audio)
       setIsPlaying(true)
+      setWasPlayingBeforeHidden(true) // Allow auto-resume if playing
     }).catch(() => setIsPlaying(false))
     setIsMenuOpen(false)
   }
@@ -137,10 +170,18 @@ export function AmbientAudioPlayer() {
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-medium text-sm">Ambient Audio</h3>
               <div className="flex gap-2">
-                <button onClick={togglePlayPause} aria-label="Toggle play/pause" className="text-gray-500 hover:text-primary">
+                <button
+                  onClick={togglePlayPause}
+                  aria-label="Toggle play/pause"
+                  className="text-gray-500 hover:text-primary"
+                >
                   {isPlaying ? "Pause" : "Play"}
                 </button>
-                <button onClick={toggleMute} aria-label="Toggle mute" className="text-gray-500 hover:text-primary">
+                <button
+                  onClick={toggleMute}
+                  aria-label="Toggle mute"
+                  className="text-gray-500 hover:text-primary"
+                >
                   {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
                 </button>
               </div>
@@ -183,7 +224,9 @@ export function AmbientAudioPlayer() {
                         key={index}
                         onClick={() => selectAudio(audio)}
                         className={`w-full text-left p-2 text-sm rounded-md transition-colors ${
-                          currentAudio?.name === audio.name ? "bg-primary/10 text-primary" : "hover:bg-gray-100"
+                          currentAudio?.name === audio.name
+                            ? "bg-primary/10 text-primary"
+                            : "hover:bg-gray-100"
                         }`}
                       >
                         {audio.name}

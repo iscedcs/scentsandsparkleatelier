@@ -128,7 +128,7 @@ const [canScrollRight, setCanScrollRight] = useState(true)
           {/* Horizontal Scrolling Container */}
           <div
             ref={containerRef}
-            className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory py-8 px-4 -mx-4"
+            className="flex overflow-x-hidden snap-x snap-mandatory py-8 px-4 -mx-4"
             style={{ cursor: isDragging ? "grabbing" : "grab" }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
