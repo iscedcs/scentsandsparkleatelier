@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Volume2, VolumeX, Music } from "lucide-react"
@@ -19,131 +18,116 @@ export function AmbientAudioPlayer() {
   const [currentAudio, setCurrentAudio] = useState<ScentAudio | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
-  const [isInitialized, setIsInitialized] = useState(false)
+  const [isPanelVisible, setIsPanelVisible] = useState(false)
 
   const scentAudios: ScentAudio[] = [
     {
-      name: "Relaxing Ambience",
-      description: "Calm, soothing sounds to complement our relaxing scents",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-relaxing-in-nature-522.mp3",
+      name: "Peaceful",
+    description: "Soft ambient background music perfect for relaxation and meditation.",
+      audioSrc: "/sound/0452. Peaceful - AShamaluevMusic.mp3",
     },
     {
-      name: "Energizing Beats",
-      description: "Uplifting sounds to pair with our energizing fragrances",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
+      name: "Soothing",
+    description: "Calm and relaxing music suitable for creating a serene environment.",
+      audioSrc: "/sound/0455. Soothing - AShamaluevMusic.mp3",
     },
     {
-      name: "Romantic Evening",
-      description: "Soft, intimate sounds for our romantic scent collection",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-piano-reflections-22.mp3",
+      name: "Aura",
+    description: "An ambient track that brings a sense of calm and clarity.",
+      audioSrc: "/sound/0454. Aura - AShamaluevMusic.mp3",
     },
     {
-      name: "Fresh Morning",
-      description: "Bright, airy sounds for our fresh scent collection",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
+      name: "Silence",
+    description: "Minimalistic and gentle, perfect for background ambiance.",
+      audioSrc: "/sound/0453. Silence - AShamaluevMusic.mp3",
     },
   ]
 
   useEffect(() => {
-    // Create audio element
-    audioRef.current = new Audio()
-    audioRef.current.loop = true
-    audioRef.current.volume = volume
+    const shuffled = [...scentAudios].sort(() => 0.5 - Math.random())
+    const firstAudio = shuffled[0]
 
-    // Set default audio
-    setCurrentAudio(scentAudios[0])
+    const audio = new Audio(firstAudio.audioSrc)
+    audio.loop = true
+    audio.volume = volume
+
+    audioRef.current = audio
+    setCurrentAudio(firstAudio)
+
+    const handleInteraction = () => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {})
+      }
+      document.removeEventListener("click", handleInteraction)
+    }
+
+    document.addEventListener("click", handleInteraction)
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause()
-        audioRef.current = null
-      }
+      document.removeEventListener("click", handleInteraction)
+      audioRef.current?.pause()
     }
   }, [])
 
   useEffect(() => {
-    if (!audioRef.current || !currentAudio) return
-
-    // Update audio source when current audio changes
-    audioRef.current.src = currentAudio.audioSrc
-
-    if (isPlaying) {
-      audioRef.current.play().catch((error) => {
-        // Handle autoplay restrictions
-        console.log("Autoplay prevented:", error)
-        setIsPlaying(false)
-      })
+    if (audioRef.current) {
+      audioRef.current.volume = isMuted ? 0 : volume
     }
-  }, [currentAudio, isPlaying])
-
-  useEffect(() => {
-    if (!audioRef.current) return
-
-    // Update volume
-    audioRef.current.volume = isMuted ? 0 : volume
   }, [volume, isMuted])
 
-  const togglePlay = () => {
-    if (!isInitialized) {
-      setIsInitialized(true)
-    }
+  const togglePlayPause = () => {
+    if (!audioRef.current) return
 
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause()
-      } else {
-        audioRef.current.play().catch((error) => {
-          console.log("Playback prevented:", error)
-        })
-      }
-      setIsPlaying(!isPlaying)
+    if (isPlaying) {
+      audioRef.current.pause()
+      setIsPlaying(false)
+    } else {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {})
     }
   }
 
   const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted
-      setIsMuted(!isMuted)
-    }
+    if (!audioRef.current) return
+    audioRef.current.muted = !isMuted
+    setIsMuted(!isMuted)
   }
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newVolume = Number.parseFloat(e.target.value)
+    const newVolume = parseFloat(e.target.value)
     setVolume(newVolume)
     if (audioRef.current) {
       audioRef.current.volume = newVolume
-    }
-
-    // Unmute if volume is changed while muted
-    if (isMuted && newVolume > 0) {
-      setIsMuted(false)
-      if (audioRef.current) {
+      if (isMuted && newVolume > 0) {
         audioRef.current.muted = false
+        setIsMuted(false)
       }
     }
   }
 
   const selectAudio = (audio: ScentAudio) => {
-    setCurrentAudio(audio)
+    if (!audioRef.current) return
+    audioRef.current.src = audio.audioSrc
+    audioRef.current.play().then(() => {
+      setCurrentAudio(audio)
+      setIsPlaying(true)
+    }).catch(() => setIsPlaying(false))
     setIsMenuOpen(false)
   }
 
   return (
     <div className="fixed bottom-8 right-8 z-50">
-      {/* Main Control Button */}
       <motion.button
         className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        onClick={togglePlay}
-        aria-label={isPlaying ? "Pause ambient audio" : "Play ambient audio"}
+        onClick={() => setIsPanelVisible(!isPanelVisible)}
+        aria-label="Ambient audio controls"
       >
         <Music className="h-5 w-5" />
       </motion.button>
 
-      {/* Audio Controls Panel */}
       <AnimatePresence>
-        {isInitialized && (
+        {isPanelVisible && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -153,23 +137,20 @@ export function AmbientAudioPlayer() {
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-medium text-sm">Ambient Audio</h3>
               <div className="flex gap-2">
-                <button
-                  onClick={toggleMute}
-                  className="text-gray-500 hover:text-primary transition-colors"
-                  aria-label={isMuted ? "Unmute" : "Mute"}
-                >
+                <button onClick={togglePlayPause} aria-label="Toggle play/pause" className="text-gray-500 hover:text-primary">
+                  {isPlaying ? "Pause" : "Play"}
+                </button>
+                <button onClick={toggleMute} aria-label="Toggle mute" className="text-gray-500 hover:text-primary">
                   {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
                 </button>
               </div>
             </div>
 
-            {/* Current Audio Info */}
             <div className="mb-3">
               <p className="text-sm font-medium">{currentAudio?.name}</p>
               <p className="text-xs text-gray-500">{currentAudio?.description}</p>
             </div>
 
-            {/* Volume Slider */}
             <div className="mb-4">
               <input
                 type="range"
@@ -182,7 +163,6 @@ export function AmbientAudioPlayer() {
               />
             </div>
 
-            {/* Audio Selection */}
             <div>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -190,7 +170,6 @@ export function AmbientAudioPlayer() {
               >
                 Change ambient sound
               </button>
-
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.div

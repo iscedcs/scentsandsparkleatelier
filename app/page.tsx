@@ -74,7 +74,6 @@ export default function HomeEnhanced() {
         </div>
       </div>
 
-      <AmbientAudioPlayer />
     </div>
   )
 }

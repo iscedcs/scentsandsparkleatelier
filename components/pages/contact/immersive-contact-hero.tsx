@@ -79,7 +79,7 @@ export function ImmersiveContactHero() {
                   repeatType: "reverse",
                 }}
               >
-                <Image src="/assets/logo-trans.png" alt="Scents & Sparkle Atelier" width={50} height={50} className="invert" />
+                <Image src="/assets/logo-trans.png" alt="Scents & Sparkle Atelier" width={50} height={50}/>
               </motion.div>
             </div>
           </motion.div>
