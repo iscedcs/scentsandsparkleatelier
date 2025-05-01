@@ -14,7 +14,7 @@ interface ScentAudio {
 export function AmbientAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
-  const [volume, setVolume] = useState(0.3)
+  const [volume, setVolume] = useState(0.2)
   const [currentAudio, setCurrentAudio] = useState<ScentAudio | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
