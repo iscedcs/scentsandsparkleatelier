@@ -1,10 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { X, ShoppingCart, Heart, Share2 } from "lucide-react"
 import type { Product } from "@/components/product-grid"
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { ShoppingCart, X } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 interface ProductDetailModalProps {
@@ -51,7 +51,17 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
             </div>
 
 
-            
+            <div className="mb-8">
+              <h4 className="font-medium mb-3">Features:</h4>
+              <ul className="space-y-2">
+              {(product.features ?? []).map((feature, index) => (
+                <li key={index} className="flex items-start">
+                <span className="text-primary mr-2">•</span>
+                <span>{feature}</span>
+                </li>
+              ))}
+              </ul>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
               <Button asChild className="col-span-2 bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2">

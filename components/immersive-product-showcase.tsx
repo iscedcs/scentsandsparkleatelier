@@ -25,7 +25,7 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
     if (autoplay) {
       interval = setInterval(() => {
         handleNext()
-      }, 5000) // Change slide every 5 seconds
+      }, 5000) 
     }
 
     return () => {
@@ -33,7 +33,6 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
     }
   }, [autoplay, currentIndex,])
 
-  // Pause autoplay on hover
   const handleMouseEnter = () => setAutoplay(false)
   const handleMouseLeave = () => setAutoplay(true)
 
@@ -113,6 +112,18 @@ export function ImmersiveProductShowcase({ products }: ImmersiveProductShowcaseP
                 <p className="text-primary text-lg md:text-xl font-medium mb-6">{currentProduct.price}</p>
                 <div className="w-16 h-0.5 bg-primary mb-4 md:mb-6"></div>
                 <p className="text-gray-700 mb-4 md:mb-6 text-sm md:text-base">{currentProduct.description}</p>
+                <div className="mb-8">
+              <h4 className="font-medium mb-3">Features:</h4>
+              <ul className="space-y-2">
+
+              {(currentProduct.features ?? []).map((feature, index) => (
+                <li key={index} className="flex items-start">
+                <span className="text-primary mr-2">•</span>
+                <span>{feature}</span>
+                </li>
+              ))}
+              </ul>
+            </div>
 
                 <div className="mt-auto">
                   <Button asChild className="bg-primary hover:bg-primary/90 text-white">

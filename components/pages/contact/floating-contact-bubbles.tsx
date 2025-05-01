@@ -1,13 +1,10 @@
 "use client"
 
-import { useState, useRef } from "react"
-import { motion, AnimatePresence, useInView } from "framer-motion"
-import { Mail, Phone, MessageSquare, MapPin, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import MaxWidthWrapper from "@/components/shared/max-widthwrapper"
+import { AnimatePresence, motion, useInView } from "framer-motion"
+import { Mail, MapPin, Phone, X } from "lucide-react"
 import Link from "next/link"
+import { useRef, useState } from "react"
 
 type BubbleType = "email" | "phone" | "message" | "location" | null
 
